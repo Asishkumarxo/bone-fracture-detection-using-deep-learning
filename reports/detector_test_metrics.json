@@ -1,0 +1,43 @@
+{
+    "detector_architecture": "Faster R-CNN MobileNetV3-Large FPN",
+    "test_images_count": 25,
+    "mean_iou": 0.23215072420312138,
+    "median_iou": 0.21002958714962006,
+    "precision_at_iou_50": 0.04878048780487805,
+    "recall_at_iou_50": 0.06666666666666667,
+    "f1_score_at_iou_50": 0.056338028169014086,
+    "precision_at_iou_75": 0.0,
+    "recall_at_iou_75": 0.0,
+    "mAP_50": 0.0032520325203252032,
+    "mAP_75": 0.0,
+    "mAP_50_95": 0.0016260162601626016,
+    "per_region_performance": {
+        "leg": {
+            "images": 7,
+            "gt_lesions": 8,
+            "pred_lesions": 0,
+            "mean_iou": 0.0,
+            "precision_at_50": 0.0,
+            "recall_at_50": 0.0,
+            "f1_at_50": 0.0
+        },
+        "hand": {
+            "images": 16,
+            "gt_lesions": 19,
+            "pred_lesions": 41,
+            "mean_iou": 0.23215072420312138,
+            "precision_at_50": 0.04878048780487805,
+            "recall_at_50": 0.10526315789473684,
+            "f1_at_50": 0.06666666666666667
+        },
+        "hip": {
+            "images": 2,
+            "gt_lesions": 3,
+            "pred_lesions": 0,
+            "mean_iou": 0.0,
+            "precision_at_50": 0.0,
+            "recall_at_50": 0.0,
+            "f1_at_50": 0.0
+        }
+    }
+}

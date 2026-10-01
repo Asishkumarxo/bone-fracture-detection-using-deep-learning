@@ -1,0 +1,22 @@
+TOTAL_IMAGES: 47931
+UNIQUE_PATIENTS: 47922
+TRAIN_PATIENTS: 38337
+VALID_PATIENTS: 4793
+TEST_PATIENTS: 4792
+TRAIN_VAL_OVERLAP: 0
+TRAIN_TEST_OVERLAP: 0
+VAL_TEST_OVERLAP: 0
+TOTAL_DUPLICATES: 14263
+UNIQUE_DUPLICATE_HASHES: 6997
+CROSS_SPLIT_DUPLICATES: 4989
+CROSS_PATIENT_DUPLICATES: 14253
+CROSS_LABEL_CONFLICTS: 2509
+CORRUPT_COUNT: 0
+QUESTIONABLE_RECORDS: 6599
+DIM_STATS: {'min_width': 512, 'max_width': 512, 'mean_width': 512.0, 'median_width': 512.0, 'min_height': 512, 'max_height': 512, 'mean_height': 512.0, 'median_height': 512.0, 'min_ar': 1.0, 'max_ar': 1.0, 'mean_ar': 1.0, 'median_ar': 1.0}
+FORMATS: {'PNG': 47931}
+CHANNELS: {3: 47284, 1: 645, 4: 2}
+BIT_DEPTHS: {'8-bit per channel (24-bit RGB)': 47284, '8-bit grayscale': 645, '8-bit per channel (32-bit RGBA)': 2}
+MODES: {'RGB': 47284, 'L': 645, 'RGBA': 2}
+REGIONS: {'Lower leg': 10996, 'pelvis': 6983, 'Foot': 6840, 'Hand': 6032, 'wrist': 6020, 'Arm': 5597, 'Thigh': 5463}
+LABELS: {'Negative': 34010, 'Positive': 13921}

@@ -1,0 +1,15 @@
+anatomical_region,fracture_label,image_count,unique_patients,duplicate_count
+Arm,Negative,4618,4618,606
+Arm,Positive,979,979,165
+Foot,Negative,4926,4926,747
+Foot,Positive,1914,1914,368
+Hand,Negative,4941,4941,3224
+Hand,Positive,1091,1091,414
+Lower leg,Negative,6953,6953,1929
+Lower leg,Positive,4043,4043,1004
+Thigh,Negative,2704,2704,1477
+Thigh,Positive,2759,2759,1037
+pelvis,Negative,5743,5743,1058
+pelvis,Positive,1240,1240,339
+wrist,Negative,4125,4125,1355
+wrist,Positive,1895,1895,540

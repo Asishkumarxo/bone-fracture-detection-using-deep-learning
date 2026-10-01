@@ -1,0 +1,43 @@
+MIT License
+
+Copyright (c) 2026 Bone Fracture AI Contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+THIRD-PARTY DATASET & MODEL LICENSING NOTICES
+================================================================================
+
+This repository's MIT License applies SOLELY to the source code, scripts,
+API services, and software documentation authored within this repository.
+It does NOT cover or extend to third-party medical datasets or pretrained weights:
+
+1. BoneFract Dataset:
+   - Source: Mendeley Data (doi:10.17632/jhqrxmff7v)
+   - Governed by its respective Creative Commons Attribution (CC BY 4.0) license.
+   - Users are responsible for adhering to Mendeley Data terms of use and attribution.
+
+2. FracAtlas Dataset:
+   - Source: Figshare (doi:10.6084/m9.figshare.22634356) / Nature Scientific Data
+   - Governed by its Creative Commons Attribution 4.0 International (CC BY 4.0) license.
+   - Any redistribution or use must follow original dataset author attribution.
+
+3. TorchVision Pretrained Backbone Weights:
+   - ResNet-50 and MobileNetV3 weights are trained on ImageNet and governed by
+     PyTorch / TorchVision licensing terms.

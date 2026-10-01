@@ -1,0 +1,30 @@
+{
+    "total_images_in_dataset_csv": 4083,
+    "fractured_images_count": 719,
+    "non_fractured_images_count": 3364,
+    "total_fracture_instances": 924,
+    "coco_annotated_images": 719,
+    "coco_annotation_instances": 924,
+    "anatomical_distribution": {
+        "hand": 1538,
+        "leg": 2273,
+        "hip": 338,
+        "shoulder": 349,
+        "mixed": 398
+    },
+    "view_distribution": {
+        "frontal": 2503,
+        "lateral": 1492,
+        "oblique": 418
+    },
+    "malformed_annotations_count": 0,
+    "dimension_stats": {
+        "min_width": 181,
+        "max_width": 2880,
+        "mean_width": 653.0208623087622,
+        "min_height": 214,
+        "max_height": 2880,
+        "mean_height": 776.9123783031989,
+        "mean_aspect_ratio": 0.8674266400383011
+    }
+}

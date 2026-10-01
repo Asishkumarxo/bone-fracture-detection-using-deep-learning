@@ -1,0 +1,46 @@
+image_id,true_label,predicted_label,confidence,error_type,observed_technical_pattern
+Lower leg_patient28676_Negative_001.png,Lower leg (Normal),Thigh (Fracture),0.9823,false_positive,low contrast
+Lower leg_patient28677_Negative_001.png,Lower leg (Normal),Lower leg (Fracture),0.9394,false_positive,low contrast
+Thigh_patient49167_Negative_001.png,Thigh (Normal),Lower leg (Fracture),0.9126,false_positive,low contrast
+Thigh_patient28762_Negative_001.png,Thigh (Normal),Thigh (Fracture),0.9111,false_positive,low contrast
+Foot_patient01645_Negative_001.png,Foot (Normal),Lower leg (Fracture),0.8879,false_positive,overlapping anatomy
+Lower leg_patient35108_Negative_001.png,Lower leg (Normal),Thigh (Fracture),0.8844,false_positive,low contrast
+wrist_patient22639_Negative_001.png,wrist (Normal),Thigh (Fracture),0.8715,false_positive,overlapping anatomy
+Thigh_patient21906_Negative_001.png,Thigh (Normal),Lower leg (Fracture),0.8651,false_positive,low contrast
+Thigh_patient35490_Negative_001.png,Thigh (Normal),Lower leg (Fracture),0.8648,false_positive,low contrast
+Lower leg_patient35448_Negative_001.png,Lower leg (Normal),Lower leg (Fracture),0.8597,false_positive,low contrast
+Thigh_patient44294_Positive_001.png,Thigh (Fracture),Lower leg (Normal),0.0942,false_negative,label ambiguity
+pelvis_patient41758_Positive_001.png,pelvis (Fracture),pelvis (Normal),0.098,false_negative,label ambiguity
+pelvis_patient41799_Positive_001.png,pelvis (Fracture),pelvis (Normal),0.1078,false_negative,label ambiguity
+pelvis_patient15964_Positive_001.png,pelvis (Fracture),pelvis (Normal),0.1339,false_negative,label ambiguity
+pelvis_patient41735_Positive_001.png,pelvis (Fracture),pelvis (Normal),0.1437,false_negative,label ambiguity
+Arm_patient05411_Positive_001.png,Arm (Fracture),Lower leg (Normal),0.1473,false_negative,subtle hairline / incomplete anatomy
+Lower leg_patient11112_Positive_001.png,Lower leg (Fracture),Thigh (Normal),0.1479,false_negative,label ambiguity
+Hand_patient08635_Positive_001.png,Hand (Fracture),Hand (Normal),0.1524,false_negative,subtle hairline / incomplete anatomy
+Foot_patient41150_Positive_001.png,Foot (Fracture),Arm (Normal),0.1566,false_negative,label ambiguity
+Lower leg_patient10984_Positive_001.png,Lower leg (Fracture),Lower leg (Normal),0.1601,false_negative,label ambiguity
+wrist_patient23930_Negative_001.png,wrist,Hand,0.9691,region_error,cropping / border overlap (adjacent joint visible)
+wrist_patient18966_Negative_001.png,wrist,Hand,0.9516,region_error,cropping / border overlap (adjacent joint visible)
+wrist_patient25759_Negative_001.png,wrist,Hand,0.945,region_error,cropping / border overlap (adjacent joint visible)
+wrist_patient08064_Negative_001.png,wrist,Hand,0.9407,region_error,cropping / border overlap (adjacent joint visible)
+Thigh_patient20798_Negative_001.png,Thigh,pelvis,0.9334,region_error,cropping / border overlap (adjacent joint visible)
+wrist_patient22900_Negative_001.png,wrist,Hand,0.9299,region_error,cropping / border overlap (adjacent joint visible)
+wrist_patient08154_Negative_001.png,wrist,Hand,0.9299,region_error,cropping / border overlap (adjacent joint visible)
+wrist_patient40842_Negative_001.png,wrist,Hand,0.9242,region_error,cropping / border overlap (adjacent joint visible)
+wrist_patient26058_Negative_001.png,wrist,Hand,0.9237,region_error,cropping / border overlap (adjacent joint visible)
+wrist_patient41000_Negative_001.png,wrist,Hand,0.9198,region_error,cropping / border overlap (adjacent joint visible)
+Lower leg_patient28676_Negative_001.png,Fracture=False,Fracture=True,0.9823,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+Lower leg_patient28677_Negative_001.png,Fracture=False,Fracture=True,0.9394,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+Thigh_patient49167_Negative_001.png,Fracture=False,Fracture=True,0.9126,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+Thigh_patient28762_Negative_001.png,Fracture=False,Fracture=True,0.9111,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+Foot_patient01645_Negative_001.png,Fracture=False,Fracture=True,0.8879,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+Lower leg_patient35108_Negative_001.png,Fracture=False,Fracture=True,0.8844,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+wrist_patient22639_Negative_001.png,Fracture=False,Fracture=True,0.8715,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+Thigh_patient21906_Negative_001.png,Fracture=False,Fracture=True,0.8651,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+Thigh_patient35490_Negative_001.png,Fracture=False,Fracture=True,0.8648,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+Lower leg_patient35448_Negative_001.png,Fracture=False,Fracture=True,0.8597,high_confidence_false_positive,overlapping anatomy / vascular groove artifact
+IMG0003297,GT Lesion Bounding Box,Predicted Bounding Box,0.25,localization_error,boundary discrepancy / subtle focal lesion
+IMG0003298,GT Lesion Bounding Box,Predicted Bounding Box,0.25,localization_error,boundary discrepancy / subtle focal lesion
+IMG0003301,GT Lesion Bounding Box,Predicted Bounding Box,0.25,localization_error,boundary discrepancy / subtle focal lesion
+IMG0003308,GT Lesion Bounding Box,Predicted Bounding Box,0.25,localization_error,boundary discrepancy / subtle focal lesion
+IMG0003309,GT Lesion Bounding Box,Predicted Bounding Box,0.25,localization_error,boundary discrepancy / subtle focal lesion

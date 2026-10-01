@@ -1,0 +1,21 @@
+{
+  "actual_filename": "processed/test/pelvis_patient16064_Negative_001.png",
+  "image_id": "pelvis_patient16064_Negative_001.png",
+  "ground_truth_region": "pelvis",
+  "predicted_class": "Lower leg",
+  "predicted_confidence": 0.4267,
+  "predicted_fracture": true,
+  "fracture_confidence": 0.6468,
+  "full_probability_distribution": {
+    "Arm": 0.05290000140666962,
+    "Foot": 0.016599999740719795,
+    "Hand": 0.019300000742077827,
+    "Lower leg": 0.42669999599456787,
+    "Thigh": 0.16419999301433563,
+    "pelvis": 0.3003000020980835,
+    "wrist": 0.020099999383091927
+  },
+  "localization_available": false,
+  "localization": null,
+  "caption": "X-ray of the lower leg showing a fracture."
+}

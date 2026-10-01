@@ -1,0 +1,91 @@
+# ==============================================================================
+# Git Ignore Configuration for Bone Fracture AI
+# ==============================================================================
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets
+.env
+.env.local
+*.env
+
+# Model Checkpoints & Large Binary Weights
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.safetensors
+*.h5
+*.pb
+*.tflite
+models/checkpoints/*
+!models/checkpoints/.gitkeep
+best_model.pt
+best_detector.pt
+
+# Large Datasets & Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+data/BoneFract/
+data/FracAtlas/
+data/raw/
+BoneFract A Bone Fracture Dataset/
+processed/
+dataset_audit.csv
+questionable_records.csv
+reports/dataset_audit.csv
+reports/questionable_records.csv
+
+# Runtime & Generated Outputs
+visualizations/
+prediction_visualizations/
+inference_test_outputs/
+backend/static/visualizations/*
+!backend/static/visualizations/.gitkeep
+runs/
+logs/
+*.log
+wandb/
+mlruns/
+outputs/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE & Editor Configs
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+*.sublime-project
+*.sublime-workspace

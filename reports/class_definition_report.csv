@@ -1,0 +1,8 @@
+class_id,class_name,number_of_training_images,number_of_validation_images,number_of_test_images,fracture_positive_count,fracture_negative_count
+0,Arm,4467,572,558,979,4618
+1,Foot,5459,684,697,1914,4926
+2,Hand,4833,605,594,1091,4941
+3,Lower leg,8797,1101,1098,4043,6953
+4,Thigh,4400,522,541,2759,2704
+5,pelvis,5596,696,691,1240,5743
+6,wrist,4814,607,599,1895,4125

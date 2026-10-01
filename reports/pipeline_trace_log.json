@@ -1,0 +1,148 @@
+{
+  "stage1_model": {
+    "raw_proposals_count": 31,
+    "top_scores": [
+      0.2703999876976013,
+      0.25029999017715454,
+      0.2345000058412552,
+      0.22100000083446503,
+      0.21559999883174896
+    ],
+    "top_boxes": [
+      [
+        205.0,
+        175.8000030517578,
+        223.3000030517578,
+        191.39999389648438
+      ],
+      [
+        204.10000610351562,
+        168.5,
+        228.60000610351562,
+        201.60000610351562
+      ],
+      [
+        191.89999389648438,
+        176.3000030517578,
+        239.60000610351562,
+        199.5
+      ],
+      [
+        198.39999389648438,
+        168.10000610351562,
+        211.6999969482422,
+        181.60000610351562
+      ],
+      [
+        186.10000610351562,
+        170.5,
+        221.60000610351562,
+        199.1999969482422
+      ]
+    ],
+    "top_labels": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "stage2_predict_py": {
+    "anatomical_region": "Thigh",
+    "anatomical_confidence": 0.4824,
+    "fracture": true,
+    "fracture_confidence": 0.814,
+    "localization_available": true,
+    "localization": [
+      {
+        "box": [
+          199.2,
+          207.8,
+          216.9,
+          226.3
+        ],
+        "box_2d": [
+          199.2,
+          207.8,
+          216.9,
+          226.3
+        ],
+        "confidence": 0.2704
+      },
+      {
+        "box": [
+          198.3,
+          199.2,
+          222.0,
+          238.3
+        ],
+        "box_2d": [
+          198.3,
+          199.2,
+          222.0,
+          238.3
+        ],
+        "confidence": 0.2503
+      }
+    ],
+    "caption": "X-ray of the thigh showing a fracture."
+  },
+  "stage3_fastapi": {
+    "http_status": 200,
+    "response_json": {
+      "success": true,
+      "anatomical_region": "Thigh",
+      "anatomical_confidence": 0.4824,
+      "fracture": true,
+      "fracture_confidence": 0.814,
+      "localization_available": true,
+      "localization": [
+        {
+          "box": [
+            199.2,
+            207.8,
+            216.9,
+            226.3
+          ],
+          "box_2d": [
+            199.2,
+            207.8,
+            216.9,
+            226.3
+          ],
+          "confidence": 0.2704
+        },
+        {
+          "box": [
+            198.3,
+            199.2,
+            222.0,
+            238.3
+          ],
+          "box_2d": [
+            198.3,
+            199.2,
+            222.0,
+            238.3
+          ],
+          "confidence": 0.2503
+        }
+      ],
+      "caption": "X-ray of the thigh showing a fracture.",
+      "visualization_url": "/visualizations/pred_37d81b3dbbe7.png"
+    }
+  },
+  "stage4_streamlit": {
+    "received_is_fracture": true,
+    "received_loc_available": true,
+    "received_loc_count": 2,
+    "frontend_branch": "Render bounding boxes & overlay",
+    "visualization_url": "/visualizations/pred_37d81b3dbbe7.png"
+  },
+  "stage5_visualization": {
+    "vis_http_status": 200,
+    "content_type": "image/png",
+    "image_size_bytes": 107985
+  }
+}
