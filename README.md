@@ -181,8 +181,8 @@ bone-fracture-ai/
 
 ### Step 1: Clone Repository
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd bone-fracture-ai
+git clone https://github.com/tanmay0212-cls/bone-fracture-detection-using-deep-learning.git
+cd bone-fracture-detection-using-deep-learning
 ```
 
 ### Step 2: Create Virtual Environment
