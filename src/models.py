@@ -105,3 +105,34 @@ class MultiTaskModel(nn.Module):
         """Unfreeze all model parameters."""
         for param in self.parameters():
             param.requires_grad = True
+
+class DedicatedFractureClassifier(nn.Module):
+    """
+    Dedicated ResNet-50 Binary Fracture Classifier.
+    Specializes entirely on localized cortical fractures and bone disruptions
+    without gradient competition from multi-task classification.
+    """
+    def __init__(self, pretrained=True, dropout=0.3):
+        super(DedicatedFractureClassifier, self).__init__()
+        weights = models.ResNet50_Weights.DEFAULT if pretrained else None
+        base = models.resnet50(weights=weights)
+        
+        self.backbone = nn.Sequential(
+            base.conv1, base.bn1, base.relu, base.maxpool,
+            base.layer1, base.layer2, base.layer3, base.layer4,
+            base.avgpool, nn.Flatten()
+        )
+        self.layer4 = base.layer4
+        
+        self.classifier = nn.Sequential(
+            nn.Linear(2048, 256),
+            nn.BatchNorm1d(256),
+            nn.ReLU(inplace=True),
+            nn.Dropout(dropout),
+            nn.Linear(256, 1)
+        )
+
+    def forward(self, x):
+        features = self.backbone(x)
+        logits = self.classifier(features).squeeze(-1)
+        return logits

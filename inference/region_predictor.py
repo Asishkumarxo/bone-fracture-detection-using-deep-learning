@@ -6,7 +6,7 @@ confidence score, and complete class probability distribution.
 """
 
 import os
-from typing import Union, Dict, Any, Optional
+from typing import Union, Dict, Any, Optional, Tuple
 from PIL import Image
 import torch
 import numpy as np
@@ -39,7 +39,11 @@ class RegionPredictor:
         self.model.to(self.device)
         self.model.eval()
 
-    def predict(self, image_input: Union[str, Image.Image]) -> Dict[str, Any]:
+    def predict(
+        self,
+        image_input: Union[str, Image.Image],
+        target_size: Optional[Tuple[int, int]] = None
+    ) -> Dict[str, Any]:
         """
         Processes one image and returns predicted region, confidence, and full probability distribution.
         
@@ -50,7 +54,7 @@ class RegionPredictor:
             - confidence: float
             - probability_distribution: dict {region_name: prob}
         """
-        tensor = preprocess_for_classifier(image_input).to(self.device)
+        tensor = preprocess_for_classifier(image_input, target_size=target_size).to(self.device)
         
         with torch.no_grad():
             region_logits, _ = self.model(tensor)

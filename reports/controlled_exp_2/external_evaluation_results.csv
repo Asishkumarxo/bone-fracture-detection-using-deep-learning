@@ -1,0 +1,6 @@
+Image,AR,Baseline,Baseline_Anat,SingleCrop,MultiMean,MultiMax,Top2Mean,GroundTruth,NumCrops,CropProbs
+AdobeStock_594927383-1.jpeg,2.19,0.0341,wrist (44.2%),0.1901,0.0978,0.2203,0.2052,Positive,5,"[0.0474, 0.2203, 0.1901, 0.0233, 0.0079]"
+wrist crack image.jpg,0.62,0.6595,wrist (96.9%),0.4461,0.3178,0.5038,0.481,Positive,5,"[0.1924, 0.0659, 0.4582, 0.5038, 0.3689]"
+2.jpg,0.67,0.1732,Hand (70.0%),0.6048,0.3656,0.4555,0.4414,Positive,3,"[0.4555, 0.4273, 0.2141]"
+istockphoto-471457370-612x612.jpg,1.03,0.0094,Hand (66.0%),0.021,0.021,0.021,0.021,Positive,1,[0.021]
+AdobeStock_200285274.webp,1.05,0.1722,pelvis (92.6%),0.0916,0.0916,0.0916,0.0916,Negative,1,[0.0916]

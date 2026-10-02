@@ -92,15 +92,35 @@ class InferenceService:
         if self.pipeline is None:
             raise InferenceExecutionError("Inference service model is unavailable.")
             
-        # 2. Execute inference pipeline
+        # 2. Inspect original dimensions BEFORE preprocessing and perform resolution routing
+        orig_w, orig_h = pil_img.size
+        routing_info = ModelRegistry.route_image(orig_w, orig_h)
+        selected_model_name = routing_info["selected_model"]
+        routing_res = routing_info["routing_resolution"]
+        target_size = routing_info["target_size"]
+        
+        logger.info(
+            f"Resolution routing: {orig_w}x{orig_h} (min={min(orig_w, orig_h)}) "
+            f"-> {routing_res}x{routing_res} ({selected_model_name})"
+        )
+
+        # Select appropriate model branch
+        if selected_model_name == ModelRegistry.EXP3_CHECKPOINT_FILENAME and self.pipeline.exp3_model is not None:
+            reg_predictor = self.pipeline.exp3_region_predictor
+            frac_predictor = self.pipeline.exp3_fracture_predictor
+        else:
+            reg_predictor = self.pipeline.region_predictor
+            frac_predictor = self.pipeline.fracture_predictor
+
+        # 3. Execute inference pipeline with routed resolution
         try:
             # Predict anatomical region
-            reg_res = self.pipeline.region_predictor.predict(pil_img)
+            reg_res = reg_predictor.predict(pil_img, target_size=target_size)
             anatomical_region = reg_res['predicted_region']
             anatomical_confidence = reg_res['confidence']
             
-            # Predict fracture status
-            frac_res = self.pipeline.fracture_predictor.predict(pil_img)
+            # Predict fracture status (decision threshold = 0.50)
+            frac_res = frac_predictor.predict(pil_img, target_size=target_size)
             is_fracture = frac_res['fracture']
             fracture_confidence = frac_res['fracture_probability']
             
@@ -118,7 +138,12 @@ class InferenceService:
                 'localization': localization
             })
             
-            # 3. Assemble response without exposing server filesystem paths
+            # Compute top-3 predictions for uncertainty inspection
+            dist = reg_res.get('probability_distribution', {})
+            top_3 = sorted(dist.items(), key=lambda x: x[1], reverse=True)[:3]
+            top_predictions = [{"region": r, "confidence": round(p, 4)} for r, p in top_3]
+            
+            # 4. Assemble response without exposing server filesystem paths
             result = {
                 "success": True,
                 "anatomical_region": anatomical_region,
@@ -127,10 +152,15 @@ class InferenceService:
                 "fracture_confidence": fracture_confidence,
                 "localization_available": localization_available,
                 "localization": localization,
-                "caption": caption
+                "caption": caption,
+                "top_predictions": top_predictions,
+                "input_width": orig_w,
+                "input_height": orig_h,
+                "routing_resolution": routing_res,
+                "selected_model": selected_model_name
             }
             
-            # 4. Generate annotated visualization safely
+            # 5. Generate annotated visualization safely
             unique_id = uuid.uuid4().hex[:12]
             vis_filename = f"pred_{unique_id}.png"
             create_annotated_visualization(

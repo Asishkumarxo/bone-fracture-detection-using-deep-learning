@@ -1,0 +1,35 @@
+filename,ground_truth,predicted_region,predicted_index,confidence,probability_Arm,probability_Foot,probability_Hand,probability_Lower_leg,probability_Thigh,probability_pelvis,probability_wrist,fracture_prediction,fracture_confidence,caption
+reg_wrist_patient08064_Negative_001.png.png,wrist,wrist,6,0.9988,0.0002,0.0003,0.0002,0.0003,0.0001,0.0002,0.9988,False,0.1166,X-ray of the wrist with no fracture detected by the model.
+reg_wrist_patient08154_Negative_001.png.png,wrist,wrist,6,0.9989,0.0003,0.0001,0.0001,0.0001,0.0004,0.0002,0.9989,False,0.008,X-ray of the wrist with no fracture detected by the model.
+reg_wrist_patient18966_Negative_001.png.png,wrist,wrist,6,0.9955,0.0003,0.0,0.0039,0.0001,0.0,0.0001,0.9955,False,0.0186,X-ray of the wrist with no fracture detected by the model.
+reg_wrist_patient22900_Negative_001.png.png,wrist,wrist,6,0.9989,0.0003,0.0001,0.0001,0.0001,0.0004,0.0002,0.9989,False,0.008,X-ray of the wrist with no fracture detected by the model.
+wrist crack image.jpg,wrist,wrist,6,0.9689,0.0019,0.0004,0.0253,0.0011,0.0015,0.0009,0.9689,True,0.9954,X-ray of the wrist showing a fracture.
+fn_Hand_patient08635_Positive_001.png.png,Hand,Hand,2,0.997,0.0002,0.001,0.997,0.0005,0.0001,0.0004,0.0009,True,0.9815,X-ray of the hand showing a fracture.
+Hand_Negative_002.jpg,Hand,Hand,2,0.9944,0.002,0.0007,0.9944,0.0009,0.0003,0.0001,0.0016,False,0.0104,X-ray of the hand with no fracture detected by the model.
+Hand_Negative_003.jpg,Hand,Hand,2,0.9936,0.0014,0.0001,0.9936,0.0004,0.0004,0.0004,0.0037,False,0.04,X-ray of the hand with no fracture detected by the model.
+Hand_Negative_004.jpg,Hand,Hand,2,0.9998,0.0,0.0,0.9998,0.0,0.0,0.0,0.0001,False,0.0087,X-ray of the hand with no fracture detected by the model.
+Hand_Negative_098.jpg,Hand,Hand,2,0.9996,0.0001,0.0,0.9996,0.0,0.0001,0.0,0.0002,False,0.0358,X-ray of the hand with no fracture detected by the model.
+Foot_Negative_001.png,Foot,Foot,1,0.9974,0.0001,0.9974,0.0009,0.0003,0.0008,0.0,0.0005,True,0.7868,X-ray of the foot showing a fracture.
+Foot_Negative_002.png,Foot,Foot,1,0.9974,0.0001,0.9974,0.0009,0.0003,0.0008,0.0,0.0005,True,0.7868,X-ray of the foot showing a fracture.
+Foot_Negative_003.jpg,Foot,Foot,1,0.9991,0.0002,0.9991,0.0005,0.0001,0.0001,0.0,0.0001,False,0.3127,X-ray of the foot with no fracture detected by the model.
+Foot_Positive_000.png,Foot,Foot,1,0.9971,0.0011,0.9971,0.0004,0.0001,0.0004,0.0005,0.0005,False,0.0324,X-ray of the foot with no fracture detected by the model.
+Foot_Negative_001_variant_4.png,Foot,Foot,1,0.9954,0.0005,0.9954,0.0013,0.0003,0.0012,0.0003,0.001,True,0.5739,X-ray of the foot showing a fracture.
+pelvis_patient15936_Negative_001.png,pelvis,pelvis,5,0.9984,0.0011,0.0,0.0,0.0002,0.0001,0.9984,0.0002,False,0.0169,X-ray of the pelvis with no fracture detected by the model.
+pelvis_patient15938_Negative_001.png,pelvis,pelvis,5,0.8536,0.0266,0.035,0.0058,0.0419,0.0043,0.8536,0.0327,False,0.0027,X-ray of the pelvis with no fracture detected by the model.
+pelvis_patient16064_Negative_001.png,pelvis,pelvis,5,0.9098,0.0029,0.0024,0.0003,0.0447,0.0383,0.9098,0.0015,False,0.0243,X-ray of the pelvis with no fracture detected by the model.
+pelvis_patient16088_Negative_001.png,pelvis,pelvis,5,0.9581,0.0046,0.0003,0.0005,0.0353,0.0004,0.9581,0.0008,False,0.0083,X-ray of the pelvis with no fracture detected by the model.
+pelvis_patient16161_Positive_001.png,pelvis,pelvis,5,0.9596,0.0256,0.0026,0.0008,0.0007,0.0092,0.9596,0.0015,False,0.0135,X-ray of the pelvis with no fracture detected by the model.
+fp_Thigh_patient21906_Negative_001.png.png,Thigh,Thigh,4,0.9903,0.0019,0.0018,0.0006,0.004,0.9903,0.0005,0.0009,True,0.9953,X-ray of the thigh showing a fracture.
+fp_Thigh_patient28762_Negative_001.png.png,Thigh,Thigh,4,0.9947,0.0013,0.0002,0.0001,0.0014,0.9947,0.0019,0.0004,True,0.9997,X-ray of the thigh showing a fracture.
+fp_Thigh_patient35490_Negative_001.png.png,Thigh,Thigh,4,0.9977,0.0002,0.0004,0.0002,0.0011,0.9977,0.0002,0.0002,True,0.9991,X-ray of the thigh showing a fracture.
+fp_Thigh_patient49167_Negative_001.png.png,Thigh,Thigh,4,0.9953,0.001,0.0002,0.0002,0.0018,0.9953,0.001,0.0004,True,0.9979,X-ray of the thigh showing a fracture.
+reg_Thigh_patient20798_Negative_001.png.png,Thigh,Thigh,4,0.9982,0.0002,0.0003,0.0002,0.0001,0.9982,0.0009,0.0002,False,0.0041,X-ray of the thigh with no fracture detected by the model.
+fp_Lower leg_patient28676_Negative_001.png.png,Lower leg,Lower leg,3,0.9965,0.0008,0.0,0.0001,0.9965,0.0004,0.0019,0.0003,True,0.9989,X-ray of the lower leg showing a fracture.
+fp_Lower leg_patient28677_Negative_001.png.png,Lower leg,Lower leg,3,0.9988,0.0004,0.0001,0.0001,0.9988,0.0004,0.0,0.0002,True,0.9974,X-ray of the lower leg showing a fracture.
+fp_Lower leg_patient35108_Negative_001.png.png,Lower leg,Lower leg,3,0.9954,0.0002,0.0004,0.0005,0.9954,0.003,0.0004,0.0001,True,0.9983,X-ray of the lower leg showing a fracture.
+fp_Lower leg_patient35448_Negative_001.png.png,Lower leg,Lower leg,3,0.9997,0.0,0.0,0.0,0.9997,0.0001,0.0001,0.0,True,0.999,X-ray of the lower leg showing a fracture.
+Arm_Negative_002.jpg,Arm,Arm,0,0.9992,0.9992,0.0,0.0003,0.0001,0.0001,0.0001,0.0001,True,0.6285,X-ray of the arm showing a fracture.
+Arm_Negative_003.jpg,Arm,Arm,0,0.9982,0.9982,0.0001,0.0009,0.0001,0.0001,0.0002,0.0003,False,0.0117,X-ray of the arm with no fracture detected by the model.
+Arm_Negative_005.jpg,Arm,Arm,0,0.9999,0.9999,0.0,0.0,0.0,0.0,0.0001,0.0,False,0.0253,X-ray of the arm with no fracture detected by the model.
+Arm_Positive_000.png,Arm,Arm,0,0.9996,0.9996,0.0,0.0001,0.0001,0.0,0.0002,0.0001,True,0.7218,X-ray of the arm showing a fracture.
+Arm_Negative_002_variant_4.jpg,Arm,Arm,0,0.9989,0.9989,0.0001,0.0002,0.0002,0.0002,0.0003,0.0,True,0.9212,X-ray of the arm showing a fracture.

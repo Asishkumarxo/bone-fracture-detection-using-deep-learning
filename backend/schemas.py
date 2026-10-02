@@ -26,6 +26,11 @@ class PredictionResponse(BaseModel):
     localization: Optional[List[Dict[str, Any]]] = Field(None, description="List of detected lesion bounding boxes or null")
     caption: str = Field(..., description="Disciplined factual natural-language caption")
     visualization_url: Optional[str] = Field(None, description="Safe relative URL to download annotated image")
+    top_predictions: Optional[List[Dict[str, Any]]] = Field(None, description="Top-3 predicted anatomical regions with confidences")
+    input_width: Optional[int] = Field(None, description="Native width of input image before preprocessing")
+    input_height: Optional[int] = Field(None, description="Native height of input image before preprocessing")
+    routing_resolution: Optional[str] = Field(None, description="Routing resolution ('224' or '448')")
+    selected_model: Optional[str] = Field(None, description="Selected checkpoint filename")
 
 class ErrorResponse(BaseModel):
     success: bool = False

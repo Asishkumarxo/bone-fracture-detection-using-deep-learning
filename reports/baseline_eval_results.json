@@ -1,0 +1,145 @@
+{
+  "checkpoint": "models/checkpoints/best_model.pt",
+  "target_size": [
+    224,
+    224
+  ],
+  "metrics": {
+    "accuracy": 0.625366262034324,
+    "precision": 0.2782608695652174,
+    "recall": 0.18523878437047755,
+    "specificity": 0.8044758539458187,
+    "f1": 0.22241529105125976,
+    "roc_auc": 0.5219512101578601,
+    "pr_auc": 0.2990035132254748,
+    "tp": 256,
+    "tn": 2732,
+    "fp": 664,
+    "fn": 1126,
+    "fnr": 0.8147612156295224
+  },
+  "region_stats": {
+    "Arm": {
+      "count": 558,
+      "positive_count": 98,
+      "negative_count": 460,
+      "tp": 19,
+      "fn": 79,
+      "recall": 0.19387755102040816
+    },
+    "Foot": {
+      "count": 697,
+      "positive_count": 205,
+      "negative_count": 492,
+      "tp": 39,
+      "fn": 166,
+      "recall": 0.1902439024390244
+    },
+    "Hand": {
+      "count": 594,
+      "positive_count": 102,
+      "negative_count": 492,
+      "tp": 6,
+      "fn": 96,
+      "recall": 0.058823529411764705
+    },
+    "Lower leg": {
+      "count": 1098,
+      "positive_count": 402,
+      "negative_count": 696,
+      "tp": 69,
+      "fn": 333,
+      "recall": 0.17164179104477612
+    },
+    "Thigh": {
+      "count": 541,
+      "positive_count": 267,
+      "negative_count": 274,
+      "tp": 62,
+      "fn": 205,
+      "recall": 0.23220973782771537
+    },
+    "pelvis": {
+      "count": 691,
+      "positive_count": 126,
+      "negative_count": 565,
+      "tp": 34,
+      "fn": 92,
+      "recall": 0.2698412698412698
+    },
+    "wrist": {
+      "count": 599,
+      "positive_count": 182,
+      "negative_count": 417,
+      "tp": 27,
+      "fn": 155,
+      "recall": 0.14835164835164835
+    }
+  },
+  "resolution_stats": {
+    "102x102": {
+      "count": 3461,
+      "positive_count": 568,
+      "negative_count": 2893,
+      "tp": 128,
+      "fn": 440,
+      "tn": 2270,
+      "fp": 623,
+      "recall": 0.22535211267605634,
+      "specificity": 0.7846526097476668
+    },
+    "higher_resolution": {
+      "count": 1317,
+      "positive_count": 814,
+      "negative_count": 503,
+      "tp": 128,
+      "fn": 686,
+      "tn": 462,
+      "fp": 41,
+      "recall": 0.15724815724815724,
+      "specificity": 0.9184890656063618
+    }
+  },
+  "external_results": [
+    {
+      "name": "AdobeStock_594927383-1.jpeg",
+      "path": "c:/Users/arbaz/Downloads/AdobeStock_594927383-1.jpeg",
+      "expected": "Positive (Forearm/Wrist fracture)",
+      "predicted_region": "wrist",
+      "fracture_prob": 0.0340927392244339,
+      "predicted_label": "Negative"
+    },
+    {
+      "name": "wrist crack image.jpg",
+      "path": "c:/Users/arbaz/Downloads/wrist crack image.jpg",
+      "expected": "Positive (Wrist fracture)",
+      "predicted_region": "wrist",
+      "fracture_prob": 0.6594782471656799,
+      "predicted_label": "Positive"
+    },
+    {
+      "name": "2.jpg",
+      "path": "c:/Users/arbaz/Downloads/2.jpg",
+      "expected": "Positive (Distal radius fracture)",
+      "predicted_region": "Hand",
+      "fracture_prob": 0.1731761246919632,
+      "predicted_label": "Negative"
+    },
+    {
+      "name": "istockphoto-471457370-612x612.jpg",
+      "path": "c:/Users/arbaz/Downloads/istockphoto-471457370-612x612.jpg",
+      "expected": "Negative (Normal pelvis)",
+      "predicted_region": "Hand",
+      "fracture_prob": 0.009358913637697697,
+      "predicted_label": "Negative"
+    },
+    {
+      "name": "AdobeStock_200285274.webp",
+      "path": "c:/Users/arbaz/Downloads/AdobeStock_200285274.webp",
+      "expected": "Negative (Normal wrist)",
+      "predicted_region": "pelvis",
+      "fracture_prob": 0.17221994698047638,
+      "predicted_label": "Negative"
+    }
+  ]
+}

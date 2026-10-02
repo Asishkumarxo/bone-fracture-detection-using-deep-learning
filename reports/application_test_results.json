@@ -1,0 +1,349 @@
+{
+  "api_matrix": [
+    {
+      "test": "A. Native 102x102 BoneFract",
+      "path": "C:\\Users\\arbaz\\Downloads\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\test\\Arm\\patient03647\\Negative\\Arm_patient03647_Negative_001.png",
+      "input_w": 102,
+      "input_h": 102,
+      "min_dim": 102,
+      "expected_route": "224",
+      "actual_route": "224",
+      "expected_model": "best_model.pt",
+      "actual_model": "best_model.pt",
+      "anatomy": "pelvis",
+      "anatomy_conf": 0.8359,
+      "fracture": false,
+      "fracture_prob": 0.0192,
+      "threshold": 0.5,
+      "caption": "X-ray of the pelvis with no fracture detected by the model.",
+      "elapsed": 0.859,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "B. 800x800 BoneFract",
+      "path": "C:\\Users\\arbaz\\Downloads\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\test\\Arm\\patient26948\\Positive\\Arm_patient26948_Positive_001.png",
+      "input_w": 800,
+      "input_h": 800,
+      "min_dim": 800,
+      "expected_route": "448",
+      "actual_route": "448",
+      "expected_model": "exp3_resnet50_448.pt",
+      "actual_model": "exp3_resnet50_448.pt",
+      "anatomy": "Thigh",
+      "anatomy_conf": 0.4113,
+      "fracture": true,
+      "fracture_prob": 0.897,
+      "threshold": 0.5,
+      "caption": "X-ray of the thigh showing a fracture.",
+      "elapsed": 1.46,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "C. 373x454 BoneFract (Portrait)",
+      "path": "C:\\Users\\arbaz\\Downloads\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\test\\Arm\\patient29529\\Positive\\Arm_patient29529_Positive_001.png",
+      "input_w": 373,
+      "input_h": 454,
+      "min_dim": 373,
+      "expected_route": "448",
+      "actual_route": "448",
+      "expected_model": "exp3_resnet50_448.pt",
+      "actual_model": "exp3_resnet50_448.pt",
+      "anatomy": "Arm",
+      "anatomy_conf": 0.9999,
+      "fracture": true,
+      "fracture_prob": 0.5809,
+      "threshold": 0.5,
+      "caption": "X-ray of the arm showing a fracture.",
+      "elapsed": 0.687,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "D. 454x373 BoneFract (Landscape)",
+      "path": "C:\\Users\\arbaz\\Downloads\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\test\\Arm\\patient31687\\Negative\\Arm_patient31687_Negative_001.png",
+      "input_w": 454,
+      "input_h": 373,
+      "min_dim": 373,
+      "expected_route": "448",
+      "actual_route": "448",
+      "expected_model": "exp3_resnet50_448.pt",
+      "actual_model": "exp3_resnet50_448.pt",
+      "anatomy": "Arm",
+      "anatomy_conf": 1.0,
+      "fracture": false,
+      "fracture_prob": 0.2987,
+      "threshold": 0.5,
+      "caption": "X-ray of the arm with no fracture detected by the model.",
+      "elapsed": 0.647,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "E. High-res External X-ray",
+      "path": "frontend/assets/sample_wrist.jpg",
+      "input_w": 809,
+      "input_h": 1296,
+      "min_dim": 809,
+      "expected_route": "448",
+      "actual_route": "448",
+      "expected_model": "exp3_resnet50_448.pt",
+      "actual_model": "exp3_resnet50_448.pt",
+      "anatomy": "Hand",
+      "anatomy_conf": 0.6556,
+      "fracture": false,
+      "fracture_prob": 0.2782,
+      "threshold": 0.5,
+      "caption": "X-ray of the hand with no fracture detected by the model.",
+      "elapsed": 0.664,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "F. Known Fracture-Positive",
+      "path": "C:\\Users\\arbaz\\Downloads\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\test\\Arm\\patient26948\\Positive\\Arm_patient26948_Positive_001.png",
+      "input_w": 800,
+      "input_h": 800,
+      "min_dim": 800,
+      "expected_route": "448",
+      "actual_route": "448",
+      "expected_model": "exp3_resnet50_448.pt",
+      "actual_model": "exp3_resnet50_448.pt",
+      "anatomy": "Thigh",
+      "anatomy_conf": 0.4113,
+      "fracture": true,
+      "fracture_prob": 0.897,
+      "threshold": 0.5,
+      "caption": "X-ray of the thigh showing a fracture.",
+      "elapsed": 0.891,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "G. Known Fracture-Negative",
+      "path": "C:\\Users\\arbaz\\Downloads\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\BoneFract A Bone Fracture Dataset\\test\\Arm\\patient03647\\Negative\\Arm_patient03647_Negative_001.png",
+      "input_w": 102,
+      "input_h": 102,
+      "min_dim": 102,
+      "expected_route": "224",
+      "actual_route": "224",
+      "expected_model": "best_model.pt",
+      "actual_model": "best_model.pt",
+      "anatomy": "pelvis",
+      "anatomy_conf": 0.8359,
+      "fracture": false,
+      "fracture_prob": 0.0192,
+      "threshold": 0.5,
+      "caption": "X-ray of the pelvis with no fracture detected by the model.",
+      "elapsed": 0.483,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "H. Landscape X-ray (1920x876)",
+      "path": "tests/fixtures/external_1920x876.png",
+      "input_w": 1920,
+      "input_h": 876,
+      "min_dim": 876,
+      "expected_route": "448",
+      "actual_route": "448",
+      "expected_model": "exp3_resnet50_448.pt",
+      "actual_model": "exp3_resnet50_448.pt",
+      "anatomy": "Hand",
+      "anatomy_conf": 0.9424,
+      "fracture": false,
+      "fracture_prob": 0.4294,
+      "threshold": 0.5,
+      "caption": "X-ray of the hand with no fracture detected by the model.",
+      "elapsed": 0.816,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "test": "I. Portrait X-ray (809x1296)",
+      "path": "frontend/assets/hero_xray.jpg",
+      "input_w": 809,
+      "input_h": 1296,
+      "min_dim": 809,
+      "expected_route": "448",
+      "actual_route": "448",
+      "expected_model": "exp3_resnet50_448.pt",
+      "actual_model": "exp3_resnet50_448.pt",
+      "anatomy": "Hand",
+      "anatomy_conf": 0.6556,
+      "fracture": false,
+      "fracture_prob": 0.2782,
+      "threshold": 0.5,
+      "caption": "X-ray of the hand with no fracture detected by the model.",
+      "elapsed": 0.754,
+      "http_status": 200,
+      "status": "PASS"
+    }
+  ],
+  "schema_validation": [
+    [
+      "A. Native 102x102 BoneFract",
+      true,
+      "Schema valid"
+    ],
+    [
+      "B. 800x800 BoneFract",
+      true,
+      "Schema valid"
+    ],
+    [
+      "C. 373x454 BoneFract (Portrait)",
+      true,
+      "Schema valid"
+    ],
+    [
+      "D. 454x373 BoneFract (Landscape)",
+      true,
+      "Schema valid"
+    ],
+    [
+      "E. High-res External X-ray",
+      true,
+      "Schema valid"
+    ],
+    [
+      "F. Known Fracture-Positive",
+      true,
+      "Schema valid"
+    ],
+    [
+      "G. Known Fracture-Negative",
+      true,
+      "Schema valid"
+    ],
+    [
+      "H. Landscape X-ray (1920x876)",
+      true,
+      "Schema valid"
+    ],
+    [
+      "I. Portrait X-ray (809x1296)",
+      true,
+      "Schema valid"
+    ]
+  ],
+  "error_handling": [
+    {
+      "test": "1. Non-image file (.txt text payload)",
+      "expected_status": 400,
+      "actual_status": 400,
+      "error_msg": "Unsupported file format '.txt'. Please upload a standard image file (PNG, JPG, BMP).",
+      "elapsed": 0.004,
+      "status": "PASS"
+    },
+    {
+      "test": "2. Corrupted image file (damaged PNG header)",
+      "expected_status": 400,
+      "actual_status": 400,
+      "error_msg": "Uploaded file is corrupted or not a valid image format.",
+      "elapsed": 0.003,
+      "status": "PASS"
+    },
+    {
+      "test": "3. Empty upload (0 bytes)",
+      "expected_status": 400,
+      "actual_status": 400,
+      "error_msg": "Uploaded image file is empty.",
+      "elapsed": 0.003,
+      "status": "PASS"
+    },
+    {
+      "test": "4. Extremely small image (2x2 pixels)",
+      "expected_status": 200,
+      "actual_status": 200,
+      "error_msg": "",
+      "elapsed": 0.496,
+      "status": "PASS"
+    },
+    {
+      "test": "5. Very wide image (2000x80 pixels)",
+      "expected_status": 200,
+      "actual_status": 200,
+      "error_msg": "",
+      "elapsed": 0.247,
+      "status": "PASS"
+    },
+    {
+      "test": "6. Very tall image (80x2000 pixels)",
+      "expected_status": 200,
+      "actual_status": 200,
+      "error_msg": "",
+      "elapsed": 0.259,
+      "status": "PASS"
+    },
+    {
+      "test": "7. Unsupported format (.exe payload)",
+      "expected_status": 400,
+      "actual_status": 400,
+      "error_msg": "Unsupported file format '.exe'. Please upload a standard image file (PNG, JPG, BMP).",
+      "elapsed": 0.003,
+      "status": "PASS"
+    },
+    {
+      "test": "8. Missing image field",
+      "expected_status": 422,
+      "actual_status": 422,
+      "error_msg": "[{'type': 'missing', 'loc': ['body', 'image'], 'msg': 'Field required', 'input': None}]",
+      "elapsed": 0.004,
+      "status": "PASS"
+    }
+  ],
+  "consistency": [
+    {
+      "preset": "Fractured Wrist (AP)",
+      "asset": "sample_wrist.jpg",
+      "anatomy_api": "Hand",
+      "anatomy_st": "Hand",
+      "fracture_api": false,
+      "fracture_st": false,
+      "conf_api": 0.6556,
+      "conf_st": 0.6556,
+      "prob_api": 0.2782,
+      "prob_st": 0.2782,
+      "caption_match": true,
+      "status": "PASS"
+    },
+    {
+      "preset": "Normal Hand (PA)",
+      "asset": "sample_hand.jpg",
+      "anatomy_api": "Hand",
+      "anatomy_st": "Hand",
+      "fracture_api": false,
+      "fracture_st": false,
+      "conf_api": 0.9372,
+      "conf_st": 0.9372,
+      "prob_api": 0.3397,
+      "prob_st": 0.3397,
+      "caption_match": true,
+      "status": "PASS"
+    },
+    {
+      "preset": "Fractured Forearm",
+      "asset": "sample_forearm.jpg",
+      "anatomy_api": "wrist",
+      "anatomy_st": "wrist",
+      "fracture_api": true,
+      "fracture_st": true,
+      "conf_api": 0.9611,
+      "conf_st": 0.9611,
+      "prob_api": 0.7788,
+      "prob_st": 0.7788,
+      "caption_match": true,
+      "status": "PASS"
+    }
+  ],
+  "performance": {
+    "backend_startup_seconds": 1.95,
+    "first_prediction_seconds": 0.467,
+    "subsequent_224_avg_seconds": 0.483,
+    "subsequent_224_min_seconds": 0.475,
+    "subsequent_448_avg_seconds": 0.719,
+    "subsequent_448_min_seconds": 0.639
+  }
+}

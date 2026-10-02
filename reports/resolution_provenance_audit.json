@@ -1,0 +1,162 @@
+{
+  "total_images": 47931,
+  "total_102_images": 34542,
+  "split_102_counts": {
+    "train": 27618,
+    "validation": 3463,
+    "test": 3461
+  },
+  "split_totals": {
+    "train": 38366,
+    "validation": 4787,
+    "test": 4778
+  },
+  "top_resolutions": {
+    "102x102": {
+      "test": 3461,
+      "train": 27618,
+      "validation": 3463,
+      "Total": 34542,
+      "Pct": 72.06609501157915
+    },
+    "800x800": {
+      "test": 407,
+      "train": 3036,
+      "validation": 388,
+      "Total": 3831,
+      "Pct": 7.992739563121988
+    },
+    "373x454": {
+      "test": 328,
+      "train": 2893,
+      "validation": 332,
+      "Total": 3553,
+      "Pct": 7.4127391458555
+    },
+    "454x373": {
+      "test": 161,
+      "train": 1250,
+      "validation": 166,
+      "Total": 1577,
+      "Pct": 3.2901462519037783
+    },
+    "362x454": {
+      "test": 80,
+      "train": 628,
+      "validation": 57,
+      "Total": 765,
+      "Pct": 1.596044313700945
+    },
+    "454x454": {
+      "test": 85,
+      "train": 536,
+      "validation": 80,
+      "Total": 701,
+      "Pct": 1.4625190377834805
+    },
+    "800x650": {
+      "test": 50,
+      "train": 452,
+      "validation": 62,
+      "Total": 564,
+      "Pct": 1.1766914940226576
+    },
+    "800x730": {
+      "test": 14,
+      "train": 134,
+      "validation": 22,
+      "Total": 170,
+      "Pct": 0.35467651415576557
+    },
+    "89x108": {
+      "test": 9,
+      "train": 72,
+      "validation": 9,
+      "Total": 90,
+      "Pct": 0.18776991925893471
+    },
+    "864x1152": {
+      "test": 5,
+      "train": 61,
+      "validation": 8,
+      "Total": 74,
+      "Pct": 0.15438860027956855
+    },
+    "454x362": {
+      "test": 4,
+      "train": 42,
+      "validation": 1,
+      "Total": 47,
+      "Pct": 0.09805762450188814
+    },
+    "108x89": {
+      "test": 3,
+      "train": 32,
+      "validation": 0,
+      "Total": 35,
+      "Pct": 0.0730216352673635
+    },
+    "108x108": {
+      "test": 1,
+      "train": 19,
+      "validation": 3,
+      "Total": 23,
+      "Pct": 0.04798564603283887
+    },
+    "88x108": {
+      "test": 1,
+      "train": 15,
+      "validation": 2,
+      "Total": 18,
+      "Pct": 0.037553983851786946
+    },
+    "960x1280": {
+      "test": 0,
+      "train": 15,
+      "validation": 1,
+      "Total": 16,
+      "Pct": 0.03338131897936617
+    },
+    "800x705": {
+      "test": 3,
+      "train": 12,
+      "validation": 1,
+      "Total": 16,
+      "Pct": 0.03338131897936617
+    },
+    "86x108": {
+      "test": 1,
+      "train": 10,
+      "validation": 1,
+      "Total": 12,
+      "Pct": 0.025035989234524627
+    },
+    "800x699": {
+      "test": 0,
+      "train": 8,
+      "validation": 2,
+      "Total": 10,
+      "Pct": 0.020863324362103856
+    },
+    "1040x780": {
+      "test": 1,
+      "train": 7,
+      "validation": 2,
+      "Total": 10,
+      "Pct": 0.020863324362103856
+    },
+    "204x204": {
+      "test": 1,
+      "train": 6,
+      "validation": 1,
+      "Total": 8,
+      "Pct": 0.016690659489683086
+    }
+  },
+  "total_patients": 47922,
+  "single_res_patients": 47921,
+  "multi_res_patients": 1,
+  "patients_with_102_and_high": 0,
+  "mixed_duplicate_pairs_count": 0,
+  "sample_mixed_pairs": []
+}

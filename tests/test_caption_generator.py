@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 import unittest
 from src.caption_generator import generate_description, generate_factual_caption
+from inference.caption_generator import generate_caption
 
 class TestCaptionGenerator(unittest.TestCase):
 
@@ -164,6 +165,52 @@ class TestCaptionGenerator(unittest.TestCase):
         # Positional signature
         c2 = generate_factual_caption("wrist", 0.99, True, 0.95, None, "distal radius")
         self.assertEqual(c2, "X-ray of the wrist showing a fracture involving the distal radius.")
+
+    def test_fourteen_combinations_all_seven_regions(self):
+        """
+        Tests all 7 anatomical regions across both fracture=True and fracture=False (14 combinations)
+        for both inference.caption_generator and src.caption_generator.
+        """
+        regions = ["Arm", "Foot", "Hand", "Lower leg", "Thigh", "pelvis", "wrist"]
+        for region in regions:
+            # Negative case
+            neg_pred = {"anatomical_region": region, "fracture": False}
+            inf_neg = generate_caption(neg_pred)
+            src_neg = generate_description(neg_pred)
+            expected_neg = f"X-ray of the {region.lower()} with no fracture detected by the model."
+            self.assertEqual(inf_neg, expected_neg)
+            self.assertEqual(src_neg, expected_neg)
+
+            # Positive case
+            pos_pred = {"anatomical_region": region, "fracture": True}
+            inf_pos = generate_caption(pos_pred)
+            src_pos = generate_description(pos_pred)
+            self.assertEqual(inf_pos, f"X-ray of the {region.lower()} showing a fracture.")
+            self.assertEqual(src_pos, f"X-ray of the {region.lower()} with a fracture detected by the model.")
+
+    def test_edge_cases_and_invalid_missing_values(self):
+        """
+        Tests missing anatomy, unknown anatomy, missing fracture, None values, and invalid inputs.
+        """
+        edge_cases = [
+            ({}, "X-ray with no fracture detected by the model."),
+            ({"fracture": False}, "X-ray with no fracture detected by the model."),
+            ({"fracture": True}, "X-ray showing a fracture."),
+            ({"anatomical_region": None, "fracture": False}, "X-ray with no fracture detected by the model."),
+            ({"anatomical_region": None, "fracture": True}, "X-ray showing a fracture."),
+            ({"anatomical_region": "unknown", "fracture": False}, "X-ray with no fracture detected by the model."),
+            ({"anatomical_region": "unknown", "fracture": True}, "X-ray showing a fracture."),
+            ({"anatomical_region": "N/A", "fracture": False}, "X-ray with no fracture detected by the model."),
+            ({"anatomical_region": "N/A", "fracture": True}, "X-ray showing a fracture."),
+            ({"anatomical_region": "wrist", "fracture": None}, "X-ray of the wrist with no fracture detected by the model."),
+            ({"anatomical_region": "wrist", "fracture": True, "fracture_confidence": 0.0001}, "X-ray of the wrist showing a fracture."),
+            ({"anatomical_region": "wrist", "fracture": False, "fracture_confidence": 0.4999}, "X-ray of the wrist with no fracture detected by the model."),
+            ({"anatomical_region": "wrist", "fracture": True, "fracture_confidence": 0.5001}, "X-ray of the wrist showing a fracture."),
+            ({"anatomical_region": "wrist", "fracture": True, "fracture_confidence": 0.9999}, "X-ray of the wrist showing a fracture."),
+        ]
+        for pred, expected in edge_cases:
+            res = generate_caption(pred)
+            self.assertEqual(res, expected)
 
 if __name__ == "__main__":
     unittest.main()

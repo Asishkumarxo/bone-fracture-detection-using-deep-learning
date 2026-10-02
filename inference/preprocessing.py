@@ -6,7 +6,7 @@ and normalization transformations used during model training.
 """
 
 import os
-from typing import Union, Tuple
+from typing import Union, Tuple, Optional
 from PIL import Image
 import torch
 import torchvision.transforms as T
@@ -59,22 +59,37 @@ def load_and_validate_image(image_input: Union[str, Image.Image]) -> Image.Image
     else:
         raise TypeError(f"Expected file path str or PIL Image, got {type(image_input).__name__}")
 
-def preprocess_for_classifier(image_input: Union[str, Image.Image]) -> torch.Tensor:
+def get_original_dimensions(image_input: Union[str, Image.Image]) -> Tuple[int, int]:
+    """
+    Returns the original unresized (width, height) dimensions of an image input.
+    """
+    img = load_and_validate_image(image_input)
+    return img.size # (width, height)
+
+def preprocess_for_classifier(
+    image_input: Union[str, Image.Image],
+    target_size: Optional[Tuple[int, int]] = None
+) -> torch.Tensor:
     """
     Preprocesses an input image for the multi-task classifier using exact training convention:
-    Grayscale ('L') -> Aspect-ratio preserving pad to 224x224 -> Broadcast to 3 channels -> Normalize.
+    Grayscale ('L') -> Aspect-ratio preserving pad to target_size -> Broadcast to 3 channels -> Normalize.
+    
+    If target_size is None, defaults to ModelRegistry.CLASSIFIER_IMAGE_SIZE (224, 224).
     
     Returns:
     --------
-    torch.Tensor: Shape (1, 3, 224, 224)
+    torch.Tensor: Shape (1, 3, target_h, target_w)
     """
     img = load_and_validate_image(image_input)
     
+    if target_size is None:
+        target_size = ModelRegistry.CLASSIFIER_IMAGE_SIZE
+        
     # 1. Grayscale conversion
     gray = img.convert('L')
     
-    # 2. Aspect-ratio preserving padding to 224x224
-    padded = resize_and_pad(gray, target_size=ModelRegistry.CLASSIFIER_IMAGE_SIZE)
+    # 2. Aspect-ratio preserving padding to target_size
+    padded = resize_and_pad(gray, target_size=target_size)
     
     # 3. 3-channel broadcast for ImageNet backbone
     rgb = padded.convert('RGB')
