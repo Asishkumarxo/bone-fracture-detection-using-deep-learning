@@ -4,7 +4,6 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.1%2B-EE4C2C.svg)](https://pytorch.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30%2B-FF4B4B.svg)](https://streamlit.io/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests: 35 Passed](https://img.shields.io/badge/Tests-35%20Passed-brightgreen.svg)](tests/)
 
 ---
@@ -17,7 +16,6 @@ Plain bone radiography (X-ray) is the standard initial imaging modality in muscu
 
 1. **Anatomical Region Classification:** Identifies the bone or joint site (7 classes).
 2. **Binary Fracture Detection:** Predicts fracture presence with calibrated probability scores.
-3. **Spatial Lesion Localization:** Outlines fracture margins using bounding boxes when supported by the localization detector.
 4. **Disciplined Factual Captions:** Synthesizes deterministic natural-language descriptions strictly bounded by verified model findings, eliminating hallucinations.
 5. **Interactive Interfaces:** Provides a high-performance **FastAPI** REST backend and a **Streamlit** diagnostic web dashboard.
 
