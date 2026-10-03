@@ -1,4 +1,4 @@
-# AI-Based Bone Fracture Detection, Localization and X-Ray Description System
+# Bone fracture image captioning using deep learning (ResNet-50)
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.1%2B-EE4C2C.svg)](https://pytorch.org/)
