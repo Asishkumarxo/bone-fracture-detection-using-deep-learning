@@ -1,0 +1,138 @@
+{
+  "model": "exp4_balanced_resnet50_448.pt",
+  "input_resolution": [
+    448,
+    448
+  ],
+  "metrics": {
+    "accuracy": 0.8049393051485978,
+    "precision": 0.6438618925831202,
+    "recall": 0.7286541244573083,
+    "specificity": 0.8359835100117785,
+    "f1": 0.6836388323150034,
+    "roc_auc": 0.8732793454119003,
+    "pr_auc": 0.7980048107982538,
+    "region_accuracy": 0.8082879866052741,
+    "tp": 1007,
+    "tn": 2839,
+    "fp": 557,
+    "fn": 375
+  },
+  "region_stats": {
+    "Arm": {
+      "count": 558,
+      "positive_count": 98,
+      "negative_count": 460,
+      "tp": 57,
+      "fn": 41,
+      "tn": 415,
+      "fp": 45,
+      "recall": 0.5816326530612245,
+      "specificity": 0.9021739130434783,
+      "precision": 0.5588235294117647,
+      "f1": 0.5700000000000001
+    },
+    "Foot": {
+      "count": 697,
+      "positive_count": 205,
+      "negative_count": 492,
+      "tp": 109,
+      "fn": 96,
+      "tn": 352,
+      "fp": 140,
+      "recall": 0.5317073170731708,
+      "specificity": 0.7154471544715447,
+      "precision": 0.43775100401606426,
+      "f1": 0.4801762114537445
+    },
+    "Hand": {
+      "count": 594,
+      "positive_count": 102,
+      "negative_count": 492,
+      "tp": 55,
+      "fn": 47,
+      "tn": 425,
+      "fp": 67,
+      "recall": 0.5392156862745098,
+      "specificity": 0.8638211382113821,
+      "precision": 0.45081967213114754,
+      "f1": 0.49107142857142855
+    },
+    "Lower leg": {
+      "count": 1098,
+      "positive_count": 402,
+      "negative_count": 696,
+      "tp": 314,
+      "fn": 88,
+      "tn": 605,
+      "fp": 91,
+      "recall": 0.7810945273631841,
+      "specificity": 0.8692528735632183,
+      "precision": 0.7753086419753087,
+      "f1": 0.77819083023544
+    },
+    "Thigh": {
+      "count": 541,
+      "positive_count": 267,
+      "negative_count": 274,
+      "tp": 246,
+      "fn": 21,
+      "tn": 245,
+      "fp": 29,
+      "recall": 0.9213483146067416,
+      "specificity": 0.8941605839416058,
+      "precision": 0.8945454545454545,
+      "f1": 0.9077490774907749
+    },
+    "pelvis": {
+      "count": 691,
+      "positive_count": 126,
+      "negative_count": 565,
+      "tp": 94,
+      "fn": 32,
+      "tn": 473,
+      "fp": 92,
+      "recall": 0.746031746031746,
+      "specificity": 0.8371681415929203,
+      "precision": 0.5053763440860215,
+      "f1": 0.6025641025641026
+    },
+    "wrist": {
+      "count": 599,
+      "positive_count": 182,
+      "negative_count": 417,
+      "tp": 132,
+      "fn": 50,
+      "tn": 324,
+      "fp": 93,
+      "recall": 0.7252747252747253,
+      "specificity": 0.7769784172661871,
+      "precision": 0.5866666666666667,
+      "f1": 0.6486486486486487
+    }
+  },
+  "resolution_stats": {
+    "102x102": {
+      "count": 3461,
+      "positive_count": 568,
+      "negative_count": 2893,
+      "tp": 300,
+      "fn": 268,
+      "tn": 2528,
+      "fp": 365,
+      "recall": 0.528169014084507,
+      "specificity": 0.8738333909436571
+    },
+    "higher_resolution": {
+      "count": 1317,
+      "positive_count": 814,
+      "negative_count": 503,
+      "tp": 707,
+      "fn": 107,
+      "tn": 311,
+      "fp": 192,
+      "recall": 0.8685503685503686,
+      "specificity": 0.6182902584493042
+    }
+  }
+}

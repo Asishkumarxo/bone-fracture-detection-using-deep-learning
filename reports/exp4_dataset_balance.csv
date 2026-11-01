@@ -1,0 +1,8 @@
+anatomical_region,total_unique_images,total_positive,total_negative,train_split_total,train_split_positive,train_split_negative,train_positive_prevalence_pct,train_102x102_count,train_high_res_count,val_split_total,test_split_total,target_sample,train_surplus_deficit,target_achievable
+Arm,5597,979,4618,4467,785,3682,17.57,3498,969,572,558,2000,2467,True
+Foot,6840,1914,4926,5459,1523,3936,27.9,4387,1072,684,697,2000,3459,True
+Hand,6032,1091,4941,4833,875,3958,18.1,4436,397,605,594,2000,2833,True
+Lower leg,10996,4043,6953,8797,3232,5565,36.74,5426,3371,1101,1098,2000,6797,True
+Thigh,5463,2759,2704,4400,2228,2172,50.64,2259,2141,522,541,2000,2400,True
+pelvis,6983,1240,5743,5596,997,4599,17.82,4062,1534,696,691,2000,3596,True
+wrist,6020,1895,4125,4814,1521,3293,31.6,3550,1264,607,599,2000,2814,True

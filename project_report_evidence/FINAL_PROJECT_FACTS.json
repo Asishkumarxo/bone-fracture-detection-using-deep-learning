@@ -1,0 +1,202 @@
+{
+  "project_metadata": {
+    "project_title": "Bone Fracture Image Captioning Using Deep Learning",
+    "working_name": "BoneSight",
+    "author": "Donipudi Asish Kumar",
+    "registration_number": "240301120035",
+    "degree": "Bachelor of Technology in Computer Science and Engineering",
+    "institution": "Centurion University of Technology and Management (CUTM), Bhubaneswar Campus",
+    "supervisor": "Dr. Chandra Sekhar Dash",
+    "submission_year": "2026",
+    "status": "verified"
+  },
+  "datasets": {
+    "mendeley_bonefract": {
+      "doi": "10.17632/jhqrxmff7v.1",
+      "license": "CC BY 4.0",
+      "total_images": 47931,
+      "unique_patient_clusters": 47922,
+      "color_channels": "8-bit grayscale (broadcast to 3 RGB channels)",
+      "normal_images": 34010,
+      "fracture_images": 13921,
+      "positive_ratio": 0.2904,
+      "splits": {
+        "train": {
+          "images": 38366,
+          "clusters": 38357,
+          "normal": 27205,
+          "fracture": 11161,
+          "source_manifest": "train.csv"
+        },
+        "validation": {
+          "images": 4787,
+          "clusters": 4787,
+          "normal": 3409,
+          "fracture": 1378,
+          "source_manifest": "validation.csv"
+        },
+        "test": {
+          "images": 4778,
+          "clusters": 4778,
+          "normal": 3396,
+          "fracture": 1382,
+          "source_manifest": "test.csv"
+        }
+      },
+      "resolution_distribution": {
+        "native_102x102_thumbnails": 34542,
+        "percentage_102x102": 72.07,
+        "diagnostic_high_res": 13389,
+        "percentage_high_res": 27.93,
+        "source_audit": "RESOLUTION_PROVENANCE_AUDIT.md"
+      },
+      "status": "verified"
+    },
+    "fracatlas": {
+      "doi": "10.1038/s41597-023-02432-4",
+      "license": "CC BY 4.0",
+      "total_images": 4083,
+      "fractured_images": 719,
+      "annotated_bounding_boxes": 924,
+      "task": "Lesion Localization via Faster R-CNN",
+      "status": "verified"
+    }
+  },
+  "anatomical_taxonomy": {
+    "classes": ["Arm", "Foot", "Hand", "Lower leg", "Thigh", "pelvis", "wrist"],
+    "num_classes": 7,
+    "pelvis_hip_boundary": "No independent Hip class exists; hip cases are cataloged under pelvis or proximal Thigh",
+    "uncertainty_threshold": 0.40,
+    "status": "verified"
+  },
+  "models_and_checkpoints": {
+    "baseline_resnet50": {
+      "file": "models/checkpoints/best_model.pt",
+      "size_bytes": 100688398,
+      "sha256": "e685f5e27a696c738743d57e6274488be62283a0058b8f2d5930e12353a25cb4",
+      "input_resolution": [224, 224],
+      "status": "verified"
+    },
+    "exp3_resnet50_448": {
+      "file": "models/checkpoints/exp3_resnet50_448.pt",
+      "size_bytes": 100690906,
+      "sha256": "f31533c52d58ae756d0ed93691513e19f5f29442498a0882fe467d5d91986dfb",
+      "input_resolution": [448, 448],
+      "status": "verified"
+    },
+    "exp4_balanced_resnet50_448": {
+      "file": "models/checkpoints/exp4_balanced_resnet50_448.pt",
+      "size_bytes": 100695553,
+      "sha256": "6aaea982892246e16455e3525b58aabdcd4315edf1974b24864b7052a8486d83",
+      "input_resolution": [448, 448],
+      "status": "verified",
+      "designation": "CLINICAL WINNER"
+    },
+    "exp5_inception_v3_multitask": {
+      "file": "models/checkpoints/exp5_inception_v3_multitask.pt",
+      "size_bytes": 105270015,
+      "sha256": "3a22c513d4ba0a692b04cec63e57b65f9b2c2c05c43736213e847131f0f00b98",
+      "input_resolution": [299, 299],
+      "status": "verified",
+      "designation": "SPECIFICITY & FOOT BENCHMARK"
+    },
+    "best_detector": {
+      "file": "models/checkpoints/best_detector.pt",
+      "size_bytes": 76016634,
+      "sha256": "321b7a2d480e61d8583ea23cfbc89178ad5106cebceea0e1f72a4feaa639aa29",
+      "architecture": "Faster R-CNN MobileNetV3 FPN",
+      "input_resolution": [384, 384],
+      "calibrated_threshold": 0.10,
+      "status": "verified"
+    }
+  },
+  "verified_test_metrics_n4778": {
+    "exp4_balanced_resnet50": {
+      "source_file": "reports/exp4_evaluation_report.json",
+      "test_samples": 4778,
+      "recall_sensitivity": 0.7287,
+      "specificity": 0.8360,
+      "precision": 0.6439,
+      "f1_score": 0.6836,
+      "binary_accuracy": 0.8049,
+      "roc_auc": 0.8733,
+      "pr_auc": 0.7980,
+      "region_accuracy": 0.8083,
+      "true_positives": 1007,
+      "false_negatives": 375,
+      "false_positives": 557,
+      "true_negatives": 2839,
+      "status": "verified"
+    },
+    "exp3_resnet50_448": {
+      "source_file": "reports/exp3_evaluation_report.json",
+      "test_samples": 4778,
+      "recall_sensitivity": 0.6925,
+      "specificity": 0.8701,
+      "precision": 0.6845,
+      "f1_score": 0.6885,
+      "binary_accuracy": 0.8188,
+      "roc_auc": 0.8770,
+      "pr_auc": 0.7998,
+      "region_accuracy": 0.8124,
+      "true_positives": 957,
+      "false_negatives": 425,
+      "false_positives": 441,
+      "true_negatives": 2955,
+      "status": "verified"
+    },
+    "exp5_inception_v3": {
+      "source_file": "reports/exp5_evaluation_report.json",
+      "test_samples": 4778,
+      "recall_sensitivity": 0.6758,
+      "specificity": 0.8728,
+      "precision": 0.6837,
+      "f1_score": 0.6798,
+      "binary_accuracy": 0.8158,
+      "roc_auc": 0.8577,
+      "pr_auc": 0.7706,
+      "region_accuracy": 0.8024,
+      "foot_recall": 0.5512,
+      "true_positives": 934,
+      "false_negatives": 448,
+      "false_positives": 432,
+      "true_negatives": 2964,
+      "status": "verified"
+    },
+    "baseline_resnet50_224": {
+      "source_file": "reports/baseline_eval_results.json",
+      "test_samples": 4778,
+      "recall_sensitivity": 0.1852,
+      "specificity": 0.8045,
+      "precision": 0.2783,
+      "f1_score": 0.2224,
+      "binary_accuracy": 0.6254,
+      "roc_auc": 0.5220,
+      "pr_auc": 0.2990,
+      "true_positives": 256,
+      "false_negatives": 1126,
+      "false_positives": 664,
+      "true_negatives": 2732,
+      "status": "verified"
+    }
+  },
+  "caption_generator": {
+    "type": "Deterministic Rule-Based Clinical Sentence Synthesizer",
+    "learned_llm": false,
+    "rules_count": 10,
+    "hallucinations_detected": 0,
+    "status": "verified"
+  },
+  "serving_and_testing": {
+    "backend_framework": "FastAPI",
+    "backend_port": 8000,
+    "frontend_framework": "Streamlit (BoneSight)",
+    "frontend_port": 8501,
+    "automated_tests_total": 69,
+    "automated_tests_passed": 69,
+    "automated_tests_failed": 0,
+    "pass_rate": 1.0,
+    "status": "verified"
+  }
+}
+

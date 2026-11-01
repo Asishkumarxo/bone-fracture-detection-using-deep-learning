@@ -1,0 +1,90 @@
+{
+  "experiment_id": "Experiment 5",
+  "experiment_name": "Inception-v3 Multi-Task Fine-Tuning",
+  "checkpoint_target": "models/checkpoints/exp5_inception_v3_multitask.pt",
+  "architecture": {
+    "backbone": "inception_v3",
+    "feature_dim": 2048,
+    "aux_dim": 768,
+    "pretrained_weights": "Inception_V3_Weights.DEFAULT",
+    "dropout": 0.3,
+    "use_auxiliary_classifier": true,
+    "aux_loss_weight": 0.4,
+    "num_regions": 7,
+    "region_classes": [
+      "Arm",
+      "Foot",
+      "Hand",
+      "Lower leg",
+      "Thigh",
+      "pelvis",
+      "wrist"
+    ]
+  },
+  "input_preprocessing": {
+    "input_resolution": [299, 299],
+    "aspect_ratio_preservation": "aspect-ratio preserved padding with black border",
+    "normalization": {
+      "mean": [0.485, 0.456, 0.406],
+      "std": [0.229, 0.224, 0.225]
+    },
+    "normalization_rationale": "Inception-v3 was pretrained on ImageNet using standard ImageNet mean and std. Using these exact statistics ensures that activations in the early convolutional filters (Conv2d_1a_3x3, etc.) align strictly with the pretrained feature distributions, avoiding covariate shift."
+  },
+  "training_hyperparameters": {
+    "random_seed": 42,
+    "batch_size": 8,
+    "max_epochs": 50,
+    "mixed_precision_amp": true,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "stage1": {
+      "name": "Head Adaptation Warm-up",
+      "epochs": 3,
+      "lr_heads": 0.001,
+      "frozen_layers": "Entire Inception-v3 backbone",
+      "trainable_layers": ["region_head", "fracture_head", "aux_region_head", "aux_fracture_head"]
+    },
+    "stage2": {
+      "name": "Partial Backbone Fine-Tuning",
+      "lr_backbone": 0.00002,
+      "lr_heads": 0.0001,
+      "unfrozen_blocks": ["inception.Mixed_7a", "inception.Mixed_7b", "inception.Mixed_7c"],
+      "lr_scheduler": "ReduceLROnPlateau (mode=max, factor=0.5, patience=4, min_lr=1e-6)"
+    },
+    "loss_formulation": {
+      "region_loss": "CrossEntropyLoss()",
+      "fracture_loss": "BCEWithLogitsLoss(pos_weight=pos_weight)",
+      "fracture_weight": 1.5,
+      "aux_weight": 0.4,
+      "train_loss_formula": "(loss_region + 1.5 * loss_fracture) + 0.4 * (aux_loss_region + 1.5 * aux_loss_fracture)",
+      "eval_loss_formula": "loss_region + 1.5 * loss_fracture"
+    },
+    "early_stopping": {
+      "selection_metric": "val_pr_auc",
+      "min_delta": 0.001,
+      "patience": 12,
+      "save_best_only": true
+    },
+    "decision_thresholds": {
+      "fracture_threshold": 0.50
+    }
+  },
+  "hardware_environment": {
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "vram_gb": 4.0,
+    "measured_peak_vram_mb": 685.8
+  },
+  "dataset": {
+    "dataset_root": "C:\\Users\\Donipudi Asish Kumar\\Desktop\\BoneFract A Bone Fracture Dataset",
+    "training_manifest": "reports/exp4_sample_manifest.csv",
+    "training_manifest_sha256": "114bd802b57177381cf3fec597d536831c2310bc091cdbebbee859bdc7f41252",
+    "training_sample_count": 14000,
+    "validation_split": "validation.csv",
+    "validation_sample_count": 4787,
+    "test_split": "test.csv",
+    "test_sample_count": 4778,
+    "leakage_controlled": true,
+    "train_val_test_disjoint": true
+  }
+}

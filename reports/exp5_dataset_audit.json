@@ -1,0 +1,78 @@
+{
+  "dataset_root": "C:\\Users\\Donipudi Asish Kumar\\Desktop\\BoneFract A Bone Fracture Dataset",
+  "resolved_root_confirmed": true,
+  "root_directories": [
+    "Class_Summary_Report.xlsx",
+    "PUMHSW-Xray_Dataset_Sheets.xlsx",
+    "test",
+    "train",
+    "valid"
+  ],
+  "training_manifest": {
+    "path": "reports/exp4_sample_manifest.csv",
+    "sha256": "114bd802b57177381cf3fec597d536831c2310bc091cdbebbee859bdc7f41252",
+    "total_samples": 14000,
+    "unique_images": 14000,
+    "region_counts": {
+      "Foot": 2000,
+      "Thigh": 2000,
+      "Lower leg": 2000,
+      "pelvis": 2000,
+      "Hand": 2000,
+      "wrist": 2000,
+      "Arm": 2000
+    },
+    "fracture_counts": {
+      "Negative": 7343,
+      "Positive": 6657
+    },
+    "resolution_counts": {
+      "thumbnail_102x102": 9335,
+      "high_res": 4665
+    },
+    "all_files_exist": true
+  },
+  "validation_split": {
+    "path": "validation.csv",
+    "total_samples": 4787,
+    "region_counts": {
+      "Lower leg": 1101,
+      "pelvis": 696,
+      "Foot": 684,
+      "wrist": 607,
+      "Hand": 605,
+      "Arm": 572,
+      "Thigh": 522
+    },
+    "fracture_counts": {
+      "Negative": 3409,
+      "Positive": 1378
+    },
+    "all_files_exist": true
+  },
+  "test_split": {
+    "path": "test.csv",
+    "total_samples": 4778,
+    "region_counts": {
+      "Lower leg": 1098,
+      "Foot": 697,
+      "pelvis": 691,
+      "wrist": 599,
+      "Hand": 594,
+      "Arm": 558,
+      "Thigh": 541
+    },
+    "fracture_counts": {
+      "Negative": 3396,
+      "Positive": 1382
+    },
+    "all_files_exist": true
+  },
+  "leakage_verification": {
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0,
+    "is_leakage_free": true
+  },
+  "data_integrity_status": "PASSED"
+}

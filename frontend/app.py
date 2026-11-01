@@ -54,6 +54,12 @@ def pil_to_base64_jpeg(pil_img: Image.Image, quality: int = 95) -> str:
 HERO_XRAY_PATH = get_asset_path("hero_xray.jpg")
 hero_b64 = get_base64_file(HERO_XRAY_PATH)
 
+# Pre-load sample image base64 strings for landing page showcase
+sample_wrist_b64 = get_base64_file(get_asset_path("sample_wrist.jpg"))
+sample_hand_b64 = get_base64_file(get_asset_path("sample_hand.jpg"))
+sample_forearm_b64 = get_base64_file(get_asset_path("sample_forearm.jpg"))
+sample_pelvis_b64 = get_base64_file(get_asset_path("sample_pelvis.webp"))
+
 # --- Session State Management ---
 if "current_page" not in st.session_state:
     st.session_state["current_page"] = "landing"
@@ -766,6 +772,170 @@ st.markdown("""
         color: #1F6F8B !important;
         fill: #1F6F8B !important;
     }
+
+    /* --- Enhanced Landing Page Styles --- */
+    .hero-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--secondary-blue);
+        background: #EBF3F6;
+        padding: 5px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 14px;
+        border: 1px solid #D1E5EE;
+    }
+    .stat-bar-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin: 24px 0 10px 0;
+        padding-top: 20px;
+        border-top: 1px solid #E2E8F0;
+    }
+    .stat-box {
+        background: var(--surface-white);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 14px 16px;
+        box-shadow: 0 1px 3px rgba(18, 59, 93, 0.02);
+    }
+    .stat-val {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-navy);
+        line-height: 1.1;
+    }
+    .stat-lbl {
+        font-size: 0.78rem;
+        color: var(--text-secondary);
+        margin-top: 4px;
+        font-weight: 500;
+    }
+    .insight-card {
+        background: var(--surface-white);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 22px;
+        height: 100%;
+        box-shadow: 0 1px 3px rgba(18, 59, 93, 0.03);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .insight-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(18, 59, 93, 0.08);
+    }
+    .insight-badge {
+        font-family: 'IBM Plex Sans', monospace;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--secondary-blue);
+        background: #EBF3F6;
+        padding: 3px 8px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    .insight-title {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--primary-navy);
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+    .insight-body {
+        font-size: 0.86rem;
+        color: var(--text-secondary);
+        line-height: 1.55;
+    }
+    .insight-highlight {
+        margin-top: 12px;
+        padding: 8px 12px;
+        background: #F8FAFC;
+        border-left: 3px solid var(--secondary-blue);
+        font-size: 0.8rem;
+        color: var(--primary-navy);
+        font-weight: 600;
+        border-radius: 0 4px 4px 0;
+    }
+    .benchmark-table-wrapper {
+        background: var(--surface-white);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 16px 0 24px 0;
+        box-shadow: 0 1px 3px rgba(18, 59, 93, 0.03);
+    }
+    .benchmark-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+    }
+    .benchmark-table th {
+        background: #F1F5F8;
+        color: var(--primary-navy);
+        font-weight: 600;
+        padding: 10px 14px;
+        text-align: left;
+        border-bottom: 1px solid var(--border-light);
+    }
+    .benchmark-table td {
+        padding: 10px 14px;
+        border-bottom: 1px solid #EDF2F5;
+        color: var(--text-primary);
+    }
+    .benchmark-table tr.highlight-row {
+        background: #F4F9FB;
+        font-weight: 600;
+    }
+    .tag-winner {
+        background: #E8F5E9;
+        color: #2E7D5B;
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: 6px;
+    }
+    .sample-card-frame {
+        background: var(--surface-white);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 12px;
+        box-shadow: 0 1px 3px rgba(18, 59, 93, 0.03);
+        margin-bottom: 12px;
+    }
+    .sample-img-box {
+        width: 100%;
+        height: 140px;
+        background: #0B131B;
+        border-radius: 6px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+    .sample-img-box img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+    .sample-meta-title {
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--primary-navy);
+    }
+    .sample-meta-desc {
+        font-size: 0.76rem;
+        color: var(--text-secondary);
+        margin-bottom: 8px;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -826,20 +996,22 @@ def render_landing_page():
 
     with c_hero_text:
         render_html("""
-        <div style="padding: 24px 0 12px 0;">
-            <div style="font-size: 0.85rem; font-weight: 600; color: #1F6F8B; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px;">
-                Musculoskeletal Radiology Analysis
+        <div style="padding: 16px 0 8px 0;">
+            <div class="hero-badge">
+                CLINICAL MUSCULOSKELETAL VISION &bull; VERSION 2.0
             </div>
-            <h1 class="hero-title">AI-Assisted Bone Fracture Analysis</h1>
-            <p class="hero-subtitle">
-                Analyze plain bone radiographs using deep-learning-based anatomical region classification and calibrated binary fracture detection. Designed for rigorous diagnostic research workflows.
+            <h1 class="hero-title" style="font-size: 2.3rem; margin-bottom: 12px;">
+                AI-Assisted Bone Fracture Diagnosis & Automated Captioning
+            </h1>
+            <p class="hero-subtitle" style="font-size: 1.05rem; margin-bottom: 20px;">
+                An experimental deep-learning workstation trained on <b>47,931 plain radiographs</b>. Jointly predicts <b>7 anatomical regions</b>, assesses <b>binary fracture status</b> with calibrated confidence, and generates <b>disciplined, factual clinical summaries</b> without hallucinating unobserved attributes.
             </p>
         </div>
         """)
 
         c_cta1, c_cta2 = st.columns([5, 4])
         with c_cta1:
-            if st.button("Analyze an X-ray →", key="hero_start_btn", width="stretch"):
+            if st.button("Launch Diagnostic Workspace →", key="hero_start_btn", width="stretch"):
                 navigate_to("analysis")
                 st.rerun()
         with c_cta2:
@@ -848,29 +1020,32 @@ def render_landing_page():
                 st.rerun()
 
         render_html("""
-        <div style="display: flex; gap: 24px; margin-top: 36px; padding-top: 20px; border-top: 1px solid #E2E8F0;">
-            <div>
-                <div style="font-size: 1.3rem; font-weight: 700; color: #123B5D;">7 Sites</div>
-                <div style="font-size: 0.8rem; color: #5A6E7C;">Anatomical Taxonomy</div>
+        <div class="stat-bar-container">
+            <div class="stat-box">
+                <div class="stat-val">47,931</div>
+                <div class="stat-lbl">Evaluated Radiographs</div>
             </div>
-            <div>
-                <div style="font-size: 1.3rem; font-weight: 700; color: #123B5D;">Dual-Task</div>
-                <div style="font-size: 0.8rem; color: #5A6E7C;">Clinical Inference</div>
+            <div class="stat-box">
+                <div class="stat-val">7 Sites</div>
+                <div class="stat-lbl">Anatomical Taxonomy</div>
             </div>
-            <div>
-                <div style="font-size: 1.3rem; font-weight: 700; color: #123B5D;">ResNet-50</div>
-                <div style="font-size: 0.8rem; color: #5A6E7C;">Validated Backbone</div>
+            <div class="stat-box">
+                <div class="stat-val">72.87%</div>
+                <div class="stat-lbl">Peak Recall (Exp 4)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-val">0.8770</div>
+                <div class="stat-lbl">ROC-AUC (Exp 3)</div>
             </div>
         </div>
         """)
 
     with c_hero_img:
-        # High-resolution clinical radiograph inside radiology workstation viewer frame
         render_html(f"""
         <div class="radiology-frame">
             <div class="viewport-header">
                 <span>DICOM WORKSTATION // VIEWPORT 01</span>
-                <span>AP VIEW</span>
+                <span>AP WRIST // ADULT</span>
             </div>
             <div class="viewport-image-wrapper">
                 <img src="data:image/jpeg;base64,{hero_b64}" alt="Clinical Plain Radiograph">
@@ -884,48 +1059,282 @@ def render_landing_page():
         </div>
         """)
 
-    # --- CAPABILITY STRIP ---
-    render_html('<div class="section-heading">Clinical Capabilities</div>')
-    c1, c2, c3, c4 = st.columns(4)
+    # --- 1-CLICK INTERACTIVE DEMO RADIOGRAPHS ---
+    render_html("""
+    <div class="section-heading" style="margin-top: 36px;">
+        Interactive Quick Test &bull; Select a Sample Radiograph
+    </div>
+    <p style="font-size: 0.9rem; color: #5A6E7C; margin-top: -8px; margin-bottom: 16px;">
+        Click any preset below to instantly load it into the diagnostic viewer and run automated deep-learning inference.
+    </p>
+    """)
 
-    with c1:
+    demo_c1, demo_c2, demo_c3, demo_c4 = st.columns(4)
+
+    with demo_c1:
+        render_html(f"""
+        <div class="sample-card-frame">
+            <div class="sample-img-box">
+                <img src="data:image/jpeg;base64,{sample_wrist_b64}" alt="Wrist Fracture">
+            </div>
+            <div class="sample-meta-title">Wrist Fracture</div>
+            <div class="sample-meta-desc">Distal radius cortical break</div>
+        </div>
+        """)
+        if st.button("Load & Analyze Wrist", key="demo_btn_wrist", width="stretch"):
+            load_preset("sample_wrist.jpg", "Preset: Distal Radius Fracture (Wrist)")
+            st.rerun()
+
+    with demo_c2:
+        render_html(f"""
+        <div class="sample-card-frame">
+            <div class="sample-img-box">
+                <img src="data:image/jpeg;base64,{sample_forearm_b64}" alt="Forearm Fracture">
+            </div>
+            <div class="sample-meta-title">Forearm Fracture</div>
+            <div class="sample-meta-desc">Radius & ulna diaphysis break</div>
+        </div>
+        """)
+        if st.button("Load & Analyze Forearm", key="demo_btn_forearm", width="stretch"):
+            load_preset("sample_forearm.jpg", "Preset: Forearm Fracture (Arm)")
+            st.rerun()
+
+    with demo_c3:
+        render_html(f"""
+        <div class="sample-card-frame">
+            <div class="sample-img-box">
+                <img src="data:image/jpeg;base64,{sample_hand_b64}" alt="Normal Hand">
+            </div>
+            <div class="sample-meta-title">Normal Hand</div>
+            <div class="sample-meta-desc">Intact phalanges & metacarpals</div>
+        </div>
+        """)
+        if st.button("Load & Analyze Hand", key="demo_btn_hand", width="stretch"):
+            load_preset("sample_hand.jpg", "Preset: Normal Hand Radiograph")
+            st.rerun()
+
+    with demo_c4:
+        render_html(f"""
+        <div class="sample-card-frame">
+            <div class="sample-img-box">
+                <img src="data:image/webp;base64,{sample_pelvis_b64}" alt="Normal Pelvis">
+            </div>
+            <div class="sample-meta-title">Normal Pelvis</div>
+            <div class="sample-meta-desc">Intact pelvic ring & hip joints</div>
+        </div>
+        """)
+        if st.button("Load & Analyze Pelvis", key="demo_btn_pelvis", width="stretch"):
+            load_preset("sample_pelvis.webp", "Preset: Normal Pelvis Radiograph")
+            st.rerun()
+
+    # --- CORE CAPABILITIES ---
+    render_html("""
+    <div class="section-heading" style="margin-top: 40px;">
+        Core Clinical & Deep Learning Capabilities
+    </div>
+    """)
+    cap1, cap2, cap3, cap4 = st.columns(4)
+
+    with cap1:
         render_html("""
         <div class="capability-card">
             <div class="cap-icon">🦴</div>
             <div class="cap-title">Anatomical Classification</div>
-            <div class="cap-desc">Identifies target body sites across 7 musculoskeletal classes (Wrist, Hand, Arm, Lower leg, Thigh, Pelvis, Foot).</div>
+            <div class="cap-desc">
+                Classifies bone radiographs across <b>7 anatomical classes</b> (Wrist, Hand, Arm, Lower Leg, Thigh, Pelvis, Foot) with calibrated Softmax probabilities and <b>80.83% multi-class accuracy</b>.
+            </div>
         </div>
         """)
 
-    with c2:
+    with cap2:
         render_html("""
         <div class="capability-card">
             <div class="cap-icon">⚡</div>
-            <div class="cap-title">Fracture Assessment</div>
-            <div class="cap-desc">Binary presence detection specialized for localized cortical disruptions, hairline fissures, and severe bone displacement.</div>
+            <div class="cap-title">Binary Fracture Assessment</div>
+            <div class="cap-desc">
+                Specialized for acute cortical discontinuity, hairline fissures, and comminuted breaks with a weighted loss function ($pos_weight = 2.438$) tuned for high sensitivity.
+            </div>
         </div>
         """)
 
-    with c3:
+    with cap3:
         render_html("""
         <div class="capability-card">
-            <div class="cap-icon">📊</div>
-            <div class="cap-title">Calibrated Scoring</div>
-            <div class="cap-desc">Outputs calibrated diagnostic confidence probabilities for anatomical site classification and fracture detection.</div>
+            <div class="cap-icon">📐</div>
+            <div class="cap-title">Resolution-Aware Routing</div>
+            <div class="cap-desc">
+                Dynamically gates image resolution at <b>300 pixels</b>: full radiographs evaluate on a high-res 448px branch, while low-res thumbnails route through a 224px path to prevent upsampling blur.
+            </div>
         </div>
         """)
 
-    with c4:
+    with cap4:
         render_html("""
         <div class="capability-card">
             <div class="cap-icon">📋</div>
-            <div class="cap-title">Factual Summary</div>
-            <div class="cap-desc">Generates disciplined, evidence-bounded clinical natural-language summaries without hallucinating unobserved attributes.</div>
+            <div class="cap-title">Factual Caption Generation</div>
+            <div class="cap-desc">
+                Unlike hallucination-prone generative vision LLMs, BoneSight uses a <b>deterministic template engine</b> that outputs factual text grounded strictly in model-verified logits.
+            </div>
         </div>
         """)
 
-    # --- HOW IT WORKS SECTION ---
-    render_html('<div class="section-heading">Diagnostic Evaluation Workflow</div>')
+    # --- RESEARCH INSIGHTS SECTION ---
+    render_html("""
+    <div class="section-heading" style="margin-top: 44px;">
+        Key Research Discoveries & Engineering Insights
+    </div>
+    <p style="font-size: 0.9rem; color: #5A6E7C; margin-top: -8px; margin-bottom: 20px;">
+        Critical empirical findings and trade-offs identified during rigorous evaluation on the 47,931-image BoneFract benchmark.
+    </p>
+    """)
+
+    ins_c1, ins_c2 = st.columns(2)
+
+    with ins_c1:
+        render_html("""
+        <div class="insight-card">
+            <div class="insight-badge">INSIGHT 01 &bull; DATA AUDIT</div>
+            <div class="insight-title">The 72.07% Low-Resolution Thumbnail Bottleneck</div>
+            <div class="insight-body">
+                Our comprehensive dataset audit revealed that <b>34,542 out of 47,931 images (72.07%)</b> in the BoneFract benchmark are native <b>102&times;102 thumbnails</b>.
+                <br><br>
+                When evaluated on these native 102&times;102 images, fracture recall dropped sharply to <b>38.20% (Exp 3)</b> compared to <b>90.91%</b> on high-resolution scans. Bicubic upsampling cannot synthesize fine bone trabeculae, which necessitated our dual-branch resolution-aware gate.
+            </div>
+            <div class="insight-highlight">
+                Resolution Gate: min(H, W) &le; 300px routes to 224px branch; &gt; 300px routes to 448px branch.
+            </div>
+        </div>
+        """)
+
+    with ins_c2:
+        render_html("""
+        <div class="insight-card">
+            <div class="insight-badge">INSIGHT 02 &bull; CLINICAL TRIAGE</div>
+            <div class="insight-title">Sensitivity vs False Alarm Trade-off (Exp 4 vs Exp 3)</div>
+            <div class="insight-body">
+                In emergency radiology triage, a <b>missed fracture (false negative)</b> is critical, while a false alarm (false positive) merely prompts secondary clinical review.
+                <br><br>
+                Baseline ResNet-50 missed 1,126 fractures (18.52% recall). Experiment 4 balanced training (14,000 images, 2,000/region) boosted recall to <b>72.87% (1,007 True Positives)</b>, cutting missed cases to 375. Experiment 3 achieved higher overall accuracy (81.88%) and ROC-AUC (0.8770), demonstrating the fundamental operational trade-off.
+            </div>
+            <div class="insight-highlight">
+                Exp 4 reduced false negatives by 50 cases compared to Exp 3 on the held-out test set.
+            </div>
+        </div>
+        """)
+
+    ins_c3, ins_c4 = st.columns(2)
+
+    with ins_c3:
+        render_html("""
+        <div class="insight-card" style="margin-top: 16px;">
+            <div class="insight-badge">INSIGHT 03 &bull; ANATOMICAL BOUNDARIES</div>
+            <div class="insight-title">Skeletal Overlap & Classification Boundaries</div>
+            <div class="insight-body">
+                The model achieved <b>80.83% overall anatomical accuracy</b>. However, detailed confusion matrix analysis showed errors concentrated along adjacent anatomical margins:
+                <br><br>
+                &bull; <b>Pelvis vs Thigh:</b> Ambiguity near the femoral neck and acetabulum.<br>
+                &bull; <b>Arm vs Wrist:</b> Distal radius and carpal bone transitions.<br>
+                Arm recall was 58.16% due to limited positive examples in the balanced subset (785 vs 1,000).
+            </div>
+            <div class="insight-highlight">
+                Multi-task shared representation enables anatomical context to inform fracture classification.
+            </div>
+        </div>
+        """)
+
+    with ins_c4:
+        render_html("""
+        <div class="insight-card" style="margin-top: 16px;">
+            <div class="insight-badge">INSIGHT 04 &bull; PATIENT SAFETY</div>
+            <div class="insight-title">Why Deterministic Templates Beat Generative Vision LLMs</div>
+            <div class="insight-body">
+                Modern end-to-end vision-language models (e.g. CNN-LSTM or Vision Transformers) are prone to <b>medical hallucinations</b>---generating convincing phrases about fractures, laterality, or displacement not visible in the radiograph.
+                <br><br>
+                BoneSight replaces unconstrained language decoders with a <b>deterministic template engine</b>. The text strictly mirrors model confidence scores and never asserts unsupported clinical attributes.
+            </div>
+            <div class="insight-highlight">
+                Zero hallucination guarantee: captions are strictly bounded to verified classifier outputs.
+            </div>
+        </div>
+        """)
+
+    # --- BENCHMARK PERFORMANCE COMPARISON TABLE ---
+    render_html("""
+    <div class="section-heading" style="margin-top: 44px;">
+        Evaluated Experiments & Held-Out Test Set Performance (N = 4,778)
+    </div>
+    <div class="benchmark-table-wrapper">
+        <table class="benchmark-table">
+            <thead>
+                <tr>
+                    <th>Experiment / Architecture</th>
+                    <th>Resolution</th>
+                    <th>Recall (Sensitivity)</th>
+                    <th>Specificity</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>F1-Score</th>
+                    <th>ROC-AUC</th>
+                    <th>PR-AUC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b>Baseline ResNet-50</b></td>
+                    <td>224 &times; 224</td>
+                    <td>18.52%</td>
+                    <td>80.45%</td>
+                    <td>62.54%</td>
+                    <td>27.83%</td>
+                    <td>22.24%</td>
+                    <td>0.5220</td>
+                    <td>0.2990</td>
+                </tr>
+                <tr>
+                    <td><b>Experiment 3 ResNet-50</b> <span class="tag-winner" style="background:#E3F2FD; color:#1565C0;">High Accuracy</span></td>
+                    <td>448 &times; 448</td>
+                    <td>69.25%</td>
+                    <td>87.01%</td>
+                    <td><b>81.88%</b></td>
+                    <td><b>68.45%</b></td>
+                    <td><b>68.85%</b></td>
+                    <td><b>0.8770</b></td>
+                    <td><b>0.7998</b></td>
+                </tr>
+                <tr class="highlight-row">
+                    <td><b>Experiment 4 Balanced ResNet-50</b> <span class="tag-winner">High Sensitivity</span></td>
+                    <td>448 &times; 448</td>
+                    <td><b>72.87%</b></td>
+                    <td>83.60%</td>
+                    <td>80.49%</td>
+                    <td>64.39%</td>
+                    <td>68.36%</td>
+                    <td>0.8733</td>
+                    <td>0.7980</td>
+                </tr>
+                <tr>
+                    <td><b>Experiment 5 Inception-v3</b></td>
+                    <td>299 &times; 299</td>
+                    <td>67.58%</td>
+                    <td><b>87.28%</b></td>
+                    <td>81.58%</td>
+                    <td>68.37%</td>
+                    <td>67.98%</td>
+                    <td>0.8577</td>
+                    <td>0.7706</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    """)
+
+    # --- THREE-STEP WORKFLOW ---
+    render_html("""
+    <div class="section-heading" style="margin-top: 36px;">
+        Diagnostic Evaluation Workflow
+    </div>
+    """)
     w1, w2, w3 = st.columns(3)
 
     with w1:
@@ -933,7 +1342,7 @@ def render_landing_page():
         <div class="capability-card">
             <div class="step-badge">STEP 01</div>
             <div class="cap-title">Upload Plain Radiograph</div>
-            <div class="cap-desc">Select a bone X-ray file (PNG, JPG, or WEBP). Preprocessing automatically performs aspect-ratio preserved padding and grayscale normalization.</div>
+            <div class="cap-desc">Select an X-ray (PNG, JPG, BMP). Automatic preprocessing performs aspect-preserving padding, grayscale normalization, and resolution auditing.</div>
         </div>
         """)
 
@@ -941,8 +1350,8 @@ def render_landing_page():
         render_html("""
         <div class="capability-card">
             <div class="step-badge">STEP 02</div>
-            <div class="cap-title">Deep Learning Inference</div>
-            <div class="cap-desc">The radiograph is evaluated through our validated ResNet-50 models, extracting feature embeddings for anatomy and cortical discontinuity.</div>
+            <div class="cap-title">Dual-Path Deep Learning Inference</div>
+            <div class="cap-desc">Evaluated by multi-task ResNet-50/Inception-v3 models, extracting simultaneous probability distributions for anatomical site and bone discontinuity.</div>
         </div>
         """)
 
@@ -950,27 +1359,25 @@ def render_landing_page():
         render_html("""
         <div class="capability-card">
             <div class="step-badge">STEP 03</div>
-            <div class="cap-title">Review Model Analysis</div>
-            <div class="cap-desc">Inspect classified anatomical region, fracture presence status, confidence probability score, and structured factual clinical summary.</div>
+            <div class="cap-title">Inspect Report & Visualizations</div>
+            <div class="cap-desc">Examine classified region, fracture presence confidence, candidate lesion bounding boxes (where available), and structured factual clinical summary.</div>
         </div>
         """)
 
-    # --- FOOTER ---
+    # --- FOOTER & DISCLAIMER ---
     render_html("""
     <div style="margin-top: 50px; padding: 24px 0; border-top: 1px solid #D9E3E8; display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #5A6E7C;">
         <div>
-            <b>BoneSight Platform</b> &bull; Deep Learning Bone Fracture Detection & Captioning Research Group
+            <b>BoneSight Platform</b> &bull; Deep Learning Bone Fracture Detection & Captioning Research
         </div>
         <div>
-            FastAPI Inference Backend &bull; ResNet-50 PyTorch Models &bull; Mendeley BoneFract Taxonomy
+            Centurion University of Technology and Management &bull; FastAPI + Streamlit Pipeline &bull; 69 Tests Passed
         </div>
     </div>
     <div class="disclaimer-box" style="margin-top: 10px;">
-        <b>Medical Disclaimer:</b> Research / educational prototype only. This software is intended exclusively for computational imaging research and pair-programming evaluation. It is not an FDA-cleared or CE-marked medical device and must not be used as a substitute for professional clinical diagnosis.
+        <b>Medical Disclaimer:</b> Research and educational prototype only. This software is developed for computer vision research and academic evaluation. It is not an FDA-cleared or CE-marked medical device and must not be used as a substitute for professional radiological diagnosis or emergency triage.
     </div>
     """)
-
-
 # ==============================================================================
 # PAGE 2: ANALYSIS / DIAGNOSTIC WORKSPACE
 # ==============================================================================

@@ -1,0 +1,150 @@
+{
+  "model": "exp5_inception_v3_multitask.pt",
+  "checkpoint_sha256": "3a22c513d4ba0a692b04cec63e57b65f9b2c2c05c43736213e847131f0f00b98",
+  "architecture": "Inception-v3",
+  "input_resolution": [
+    299,
+    299
+  ],
+  "metrics": {
+    "accuracy": 0.8158225198827962,
+    "precision": 0.6837481698389458,
+    "recall": 0.6758321273516642,
+    "specificity": 0.872791519434629,
+    "f1": 0.6797671033478894,
+    "roc_auc": 0.8577124871518207,
+    "pr_auc": 0.7706041718740033,
+    "region_accuracy": 0.8024277940560904,
+    "tp": 934,
+    "tn": 2964,
+    "fp": 432,
+    "fn": 448,
+    "macro_region_recall": 0.6368565876605369,
+    "recall_disparity": 0.31791143423661605,
+    "min_region_recall": 0.5098039215686274,
+    "max_region_recall": 0.8277153558052435
+  },
+  "region_stats": {
+    "Arm": {
+      "count": 558,
+      "positive_count": 98,
+      "negative_count": 460,
+      "tp": 51,
+      "fn": 47,
+      "tn": 434,
+      "fp": 26,
+      "recall": 0.5204081632653061,
+      "specificity": 0.9434782608695652,
+      "precision": 0.6623376623376623,
+      "f1": 0.582857142857143
+    },
+    "Foot": {
+      "count": 697,
+      "positive_count": 205,
+      "negative_count": 492,
+      "tp": 113,
+      "fn": 92,
+      "tn": 371,
+      "fp": 121,
+      "recall": 0.551219512195122,
+      "specificity": 0.7540650406504065,
+      "precision": 0.4829059829059829,
+      "f1": 0.5148063781321185
+    },
+    "Hand": {
+      "count": 594,
+      "positive_count": 102,
+      "negative_count": 492,
+      "tp": 52,
+      "fn": 50,
+      "tn": 447,
+      "fp": 45,
+      "recall": 0.5098039215686274,
+      "specificity": 0.9085365853658537,
+      "precision": 0.5360824742268041,
+      "f1": 0.5226130653266332
+    },
+    "Lower leg": {
+      "count": 1098,
+      "positive_count": 402,
+      "negative_count": 696,
+      "tp": 295,
+      "fn": 107,
+      "tn": 624,
+      "fp": 72,
+      "recall": 0.7338308457711443,
+      "specificity": 0.896551724137931,
+      "precision": 0.8038147138964578,
+      "f1": 0.7672301690507153
+    },
+    "Thigh": {
+      "count": 541,
+      "positive_count": 267,
+      "negative_count": 274,
+      "tp": 221,
+      "fn": 46,
+      "tn": 244,
+      "fp": 30,
+      "recall": 0.8277153558052435,
+      "specificity": 0.8905109489051095,
+      "precision": 0.8804780876494024,
+      "f1": 0.8532818532818532
+    },
+    "pelvis": {
+      "count": 691,
+      "positive_count": 126,
+      "negative_count": 565,
+      "tp": 84,
+      "fn": 42,
+      "tn": 492,
+      "fp": 73,
+      "recall": 0.6666666666666666,
+      "specificity": 0.8707964601769912,
+      "precision": 0.535031847133758,
+      "f1": 0.5936395759717314
+    },
+    "wrist": {
+      "count": 599,
+      "positive_count": 182,
+      "negative_count": 417,
+      "tp": 118,
+      "fn": 64,
+      "tn": 352,
+      "fp": 65,
+      "recall": 0.6483516483516484,
+      "specificity": 0.8441247002398081,
+      "precision": 0.644808743169399,
+      "f1": 0.6465753424657534
+    }
+  },
+  "resolution_stats": {
+    "Thumbnail Tier (102x102)": {
+      "total_samples": 3461,
+      "positive_cases": 568,
+      "negative_cases": 2893,
+      "tp": 238,
+      "fn": 330,
+      "tn": 2653,
+      "fp": 240,
+      "accuracy": 0.8353077145333718,
+      "recall": 0.41901408450704225,
+      "precision": 0.497907949790795,
+      "specificity": 0.9170411337711718,
+      "f1": 0.45506692160611856
+    },
+    "High-Res Tier (>=300x300)": {
+      "total_samples": 1317,
+      "positive_cases": 814,
+      "negative_cases": 503,
+      "tp": 696,
+      "fn": 118,
+      "tn": 311,
+      "fp": 192,
+      "accuracy": 0.7646165527714502,
+      "recall": 0.855036855036855,
+      "precision": 0.7837837837837838,
+      "specificity": 0.6182902584493042,
+      "f1": 0.81786133960047
+    }
+  }
+}
